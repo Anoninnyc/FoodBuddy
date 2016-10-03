@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReviewComponent from './ReviewComponent'
 import MovieWatchRequest from './MovieWatchRequest'
-import StarRatingComponent from '../lib/StarRatingComponent'
+import StarRatingComponent from './StarRatingComponent'
 
 
 class MovieListEntry extends Component {
@@ -62,4 +62,4 @@ class MovieListEntry extends Component {
 	}
 }
 
-export default MovieListEntry;
+export default MovieListEntry
