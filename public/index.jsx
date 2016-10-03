@@ -8,4 +8,4 @@ render((
   document.getElementById('app')
 );
 
-console.log("this")
+console.log("this");
