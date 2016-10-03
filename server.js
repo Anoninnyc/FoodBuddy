@@ -31,9 +31,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 app.use(express.static(__dirname))
-app.use(express.static(__dirname + '/public', {maxAge:"1d"}));
-app.use('/scripts', express.static(__dirname + '/node_modules', {maxAge:"1d"}));
-app.use('/compiled', express.static(__dirname + '/compiled', {maxAge:"1d"}));
+app.use(express.static(__dirname + '/public'));
+app.use('/scripts', express.static(__dirname + '/node_modules'));
+app.use('/compiled', express.static(__dirname + '/compiled'));
 
 
 app.post('/signup', handler.signupUser);
