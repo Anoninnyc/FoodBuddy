@@ -1,3 +1,5 @@
+import React, { Component } from 'react';
+
 class SingleMovieRatingEntry extends React.Component {
   constructor(props) {
     super(props);
@@ -40,5 +42,5 @@ class SingleMovieRatingEntry extends React.Component {
 
 }
 
-window.SingleMovieRatingEntry = SingleMovieRatingEntry;
+export default SingleMovieRatingEntry;
 
