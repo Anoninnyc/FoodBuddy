@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-//////
+import SingleMovieRatingEntry from './SingleMovieRatingEntry'
+import StarRatingComponent from './StarRatingComponent'
+import ReviewComponent from './ReviewComponent'
+
+
 
 class SingleMovieRating extends Component {
   constructor(props) {
