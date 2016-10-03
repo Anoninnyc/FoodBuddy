@@ -67,9 +67,9 @@ class LogIn extends Component {
       })
       .catch(err=> {
         // console.log(err);
-        this.setState({
-          errorMsg: 'invalid login information'
-        });
+        // this.setState({
+        //   errorMsg: 'invalid login information'
+        // });
       })
     }
   }
