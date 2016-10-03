@@ -7,3 +7,5 @@ render((
   <App/>), 
   document.getElementById('app')
 );
+
+console.log("this")
