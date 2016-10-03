@@ -18,7 +18,7 @@ import MyRatings from './MyRatings/MyRatings'
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = startingState = {
+    this.state = {
       view: 'Login',
       friendsRatings: [],
       movie: null,
