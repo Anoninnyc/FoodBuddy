@@ -4,7 +4,7 @@ const MovieList = ({movies, change}) => (
       movie = {movie} 
       change = {change}
       key = {movie.title} /> )}
-	</div>)
-};
+	</div>
+);
 
 export default MovieList;
