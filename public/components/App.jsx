@@ -182,7 +182,21 @@ class App extends Component {
   logout() {
     $.post(Url + '/logout').then(response=> {
       // console.log(response);
-      this.setState(startingState);
+      this.setState({
+      view: 'Login',
+      friendsRatings: [],
+      movie: null,
+      friendRequests: [],
+      pendingFriendRequests: [],
+      myFriends: [],
+      friendToFocusOn: '',
+      individualFriendsMovies: [],
+      potentialMovieBuddies: {},
+      username: null,
+      requestResponses: [],
+      currentUser: null,
+      requestsOfCurrentUser: []
+  });
     });
   }
 
