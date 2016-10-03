@@ -65,6 +65,7 @@
     "babel-preset-stage-0": "^6.16.0",
     "grunt": "^1.0.1",
     "grunt-shell": "^2.0.0",
+    "react-tap-event-plugin": "^1.0.0",
     "webpack": "^1.13.2"
   }
 }
