@@ -1,4 +1,6 @@
-class MovieRating extends React.Component {
+import React, { Component } from 'react';
+
+class MovieRating extends React {
   constructor(props) {
     super(props);
 

@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 
-import  Nav  from './Nav'
-import  LogIn  from './LogIn'
-import  SingUp  from './Signup'
-import  MovieRating  from './MovieRating'
-import  Inbox  from './Inbox'
-import  Friends  from './Friends'
-import  Home  from './home/home'
+import Nav  from './Nav'
+import LogIn  from './LogIn'
+import SignUp  from './SignUp'
+import MovieRating  from './MovieRating'
+import Inbox  from './Inbox'
+import Friends  from './Friends'
+import Home  from './home/home'
 import SingleMovieRating from './movies/SingleMovieRating'
 import SingleFriend from './SingleFriend'
-import FindMovieBuddy from './FindMovieBuddyView'
+import FindMovieBuddy from './findMovieBuddyView'
 import MyRatings from './MyRatings/MyRatings'
 
 

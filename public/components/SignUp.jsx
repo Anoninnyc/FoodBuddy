@@ -1,8 +1,10 @@
-class SignUp extends React.Component {
+import React, { Component } from 'react';
+
+class SignUp extends React {
 
   constructor(props) {
     super(props);
-//
+
     this.state = {
       username: '',
       password: '',

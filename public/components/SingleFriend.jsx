@@ -1,4 +1,4 @@
-var SingleFriend = ({moviesOfFriend,onClick,friendName, change}) => {
+const SingleFriend = ({moviesOfFriend,onClick,friendName, change}) => {
 
 console.log(friendName,'friendName');
 	// console.log('props.moviesOfFriend', moviesOfFriend)
@@ -24,6 +24,6 @@ console.log(friendName,'friendName');
 	}
 };
 
-window.SingleFriend = SingleFriend;
+//window.SingleFriend = SingleFriend;
 
 export default SingleFriend;

@@ -1,4 +1,6 @@
-class Inbox extends React.Component {
+import React, { Component } from 'react';
+
+class Inbox extends React {
   constructor(props) {
     super(props);
 

@@ -1,4 +1,7 @@
-class SingleMovieRating extends React.Component {
+import React, { Component } from 'react';
+
+
+class SingleMovieRating extends React {
   constructor(props) {
     super(props);
     this.state = {

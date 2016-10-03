@@ -1,4 +1,7 @@
-class Home extends React.Component {
+import React, { Component } from 'react';
+
+
+class Home extends React {
   constructor(props) {
     super(props);
 

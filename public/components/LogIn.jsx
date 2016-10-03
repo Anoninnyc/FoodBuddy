@@ -1,4 +1,7 @@
-class LogIn extends React.Component {
+import React, { Component } from 'react';
+
+
+class LogIn extends React {
 
   constructor(props) {
     super(props);
