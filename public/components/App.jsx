@@ -1,4 +1,4 @@
-
+import React, { Component } from 'react';
 
 import  Nav  from './Nav'
 import  LogIn  from './LogIn'
@@ -15,7 +15,7 @@ import MyRatings from './MyRatings/MyRatings'
 
 
 
-class App extends React.Component {
+class App extends React {
   constructor(props) {
     super(props);
     this.state = startingState;
