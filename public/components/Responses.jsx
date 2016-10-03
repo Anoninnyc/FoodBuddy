@@ -1,3 +1,6 @@
+import React, { Component } from 'react';
+
+
 const Responses = ({movie, responsesInfo, responseAnswer, responseType, remove, self}) => {
   console.log('props.movie', movie)
   if (movie !== null) {
@@ -29,4 +32,4 @@ const Responses = ({movie, responsesInfo, responseAnswer, responseType, remove, 
   }
 };
 
-window.Responses = Responses;
+default export Responses;

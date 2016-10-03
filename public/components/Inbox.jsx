@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import InboxEntry from './InboxEntry';
+import Responses from './Responses';
 class Inbox extends Component {
   constructor(props) {
     super(props);

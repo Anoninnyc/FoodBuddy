@@ -1,3 +1,6 @@
+import React, { Component } from 'react';
+
+
 const InboxEntry = ({inboxName, accept, requestMovie, decline, requestType, messageInfo}) => (
 <div className="InboxEntry Reponses collection-item row">
   <div className="col s3">
@@ -15,4 +18,4 @@ const InboxEntry = ({inboxName, accept, requestMovie, decline, requestType, mess
 
 );
 
-window.InboxEntry = InboxEntry;
+export default InboxEntry;

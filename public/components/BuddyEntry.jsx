@@ -1,3 +1,5 @@
+import React, { Component } from 'react';
+
 const BuddyEntry = ({Buddy, BuddyScore,buddyfunc, idx}) => (
   <div className='collection-item row'>
     <div className="col s3">
@@ -13,4 +15,4 @@ const BuddyEntry = ({Buddy, BuddyScore,buddyfunc, idx}) => (
 )
 
 
-window.BuddyEntry = BuddyEntry;
+export default BuddyEntry;

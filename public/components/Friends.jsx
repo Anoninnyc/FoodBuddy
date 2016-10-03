@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FriendEntry from './FriendEntryView'
 
 var Friends = ({fof, sendRequest, sendWatchRequest, myFriends}) => (
  

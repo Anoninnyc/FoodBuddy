@@ -1,3 +1,6 @@
+import React, { Component } from 'react';
+
+
 var FriendRatingListEntry = ({name, rating}) => (
   <div className="FriendRatingListEntry">
     <span id="friend">Name:{name}</span>
@@ -6,4 +9,4 @@ var FriendRatingListEntry = ({name, rating}) => (
   </div>
 );
 
-window.FriendRatingListEntry = FriendRatingListEntry;
+export default FriendRatingListEntry;

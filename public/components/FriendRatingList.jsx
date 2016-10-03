@@ -1,4 +1,6 @@
-var FriendRatingList = ({friendRatings, getFriendMovieRatings}) => (
+import React, { Component } from 'react';
+
+const FriendRatingList = ({friendRatings, getFriendMovieRatings}) => (
   <div className="friendRating-list">
     <div id='inputAndButton'><input type='text' name='movie' id="movieToView"/>
     <button type='submit' onClick={getFriendMovieRatings}>Click Me</button></div>
@@ -6,4 +8,4 @@ var FriendRatingList = ({friendRatings, getFriendMovieRatings}) => (
   </div>
 );
 
-window.FriendRatingList = FriendRatingList;
+export default FriendRatingList;

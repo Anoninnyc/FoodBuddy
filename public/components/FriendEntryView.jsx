@@ -1,3 +1,6 @@
+import React, { Component } from 'react';
+
+
 const FriendEntry = ({Friend, fof, Comp }) =>  (
   <div className="FriendEntry collection-item row" >
   	<div className="col s3">
@@ -10,4 +13,4 @@ const FriendEntry = ({Friend, fof, Comp }) =>  (
   </div>
 );
 
-window.FriendEntry = FriendEntry;
+export default FriendEntry;
