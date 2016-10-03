@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-class Home extends React {
+class Home extends Friends {
   constructor(props) {
     super(props);
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Inbox extends React {
+class Inbox extends Component {
   constructor(props) {
     super(props);
 
