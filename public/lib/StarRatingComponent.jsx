@@ -1,4 +1,6 @@
-class StarRatingComponent extends React.Component {
+import React, { Component } from 'react';
+
+class StarRatingComponent extends Component {
 
   constructor(props) {
     super(props);
@@ -102,4 +104,4 @@ class StarRatingComponent extends React.Component {
 }
 
 
-window.StarRatingComponent = StarRatingComponent;
+export default StarRatingComponent;

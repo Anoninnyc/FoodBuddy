@@ -1,4 +1,8 @@
-class ReviewComponent extends React.Component {
+import React, { Component } from 'react';
+
+
+
+class ReviewComponent extends Component {
 
   constructor(props) {
     super(props);
@@ -80,5 +84,4 @@ class ReviewComponent extends React.Component {
 	}
 }
 
-window.ReviewComponent = ReviewComponent;
-////
+export default ReviewComponent;

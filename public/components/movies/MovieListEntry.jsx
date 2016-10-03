@@ -1,4 +1,10 @@
-class MovieListEntry extends React.Component {
+import React, { Component } from 'react';
+import ReviewComponent from './ReviewComponent'
+import MovieWatchRequest from './MovieWatchRequest'
+import StarRatingComponent from '../lib/StarRatingComponent'
+
+
+class MovieListEntry extends Component {
 
   constructor(props) {
     super(props);
@@ -56,4 +62,4 @@ class MovieListEntry extends React.Component {
 	}
 }
 
-window.MovieListEntry = MovieListEntry;
+export default MovieListEntry;

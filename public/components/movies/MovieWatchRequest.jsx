@@ -1,4 +1,6 @@
-class MovieWatchRequest extends React.Component {
+import React, { Component } from 'react';
+
+class MovieWatchRequest extends Component {
 
   constructor(props) {
     super(props);
@@ -180,17 +182,17 @@ class MovieWatchRequest extends React.Component {
 
 
 
-var WatchRequestFriendEntry = (props) => {
+const WatchRequestFriendEntry = (props) => {
 
   return (<li className="friendToAsk"><span>{props.friend}</span><a className="btn-floating btn-small waves-effect waves-light red" onClick={() => props.handleAddFriend(props.friend)}><i class="material-icons">+</i></a></li>)
 };
 
-var WatchRequestStashEntry = (props) => {
+const WatchRequestStashEntry = (props) => {
   return (<li className="friendToAsk"><span>{props.friend}</span><a className="btn-floating btn-small waves-effect waves-light red" onClick={() => props.handleRemoveFriend(props.friend)}><i class="material-icons">-</i></a></li>)
 };
 
 
-window.MovieWatchRequest = MovieWatchRequest;
+export default MovieWatchRequest;
 
 
 
