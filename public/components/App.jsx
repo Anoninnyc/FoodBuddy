@@ -18,7 +18,21 @@ import MyRatings from './MyRatings/MyRatings'
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = startingState;
+    this.state = startingState = {
+      view: 'Login',
+      friendsRatings: [],
+      movie: null,
+      friendRequests: [],
+      pendingFriendRequests: [],
+      myFriends: [],
+      friendToFocusOn: '',
+      individualFriendsMovies: [],
+      potentialMovieBuddies: {},
+      username: null,
+      requestResponses: [],
+      currentUser: null,
+      requestsOfCurrentUser: []
+  };
     this.sendWatchRequest=this.sendWatchRequest.bind(this);
     this.getFriends=this.getCurrentFriends.bind(this);
     this.myFriends=this.state.myFriends;
