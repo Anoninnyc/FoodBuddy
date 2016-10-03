@@ -29,7 +29,7 @@ class LogIn extends Component {
   }
 
 
-  
+
 
   handleLogIn() {
     if (!this.state.username.length && !this.state.password.length) {
@@ -55,10 +55,11 @@ class LogIn extends Component {
       .then(response => {
         if (response[0] === 'it worked') {
           // console.log('hi');
-          
-          // this.setState({
-          //   errorMsg: ''
-          // });
+          if (this.isMounted()){
+          this.setState({
+            errorMsg: ''
+          });
+        }
 
           this.props.changeViews('Home');
           this.props.setCurrentUser(response[1]);
@@ -67,9 +68,11 @@ class LogIn extends Component {
       })
       .catch(err=> {
         // console.log(err);
-        // this.setState({
-        //   errorMsg: 'invalid login information'
-        // });
+         if (this.isMounted()){
+        this.setState({
+          errorMsg: 'invalid login information'
+        });
+       }
       })
     }
   }
