@@ -105,4 +105,6 @@ class MyRatings extends React.Component {
   }
 }
 
-window.MyRatings = MyRatings;
+//window.MyRatings = MyRatings;
+
+export default MyRatings;

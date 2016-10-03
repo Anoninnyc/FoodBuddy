@@ -66,3 +66,4 @@ class SelectFavoriteTitles extends React.Component {
 }
 
 window.MyRatings = MyRatings;
+

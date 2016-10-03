@@ -50,4 +50,5 @@ class Inbox extends React.Component {
   }
 }
 
-window.Inbox = Inbox;
+//window.Inbox = Inbox;
+export default Inbox;

@@ -18,7 +18,8 @@ const FindMovieBuddy = ({buddyfunc, buddies}) => {
    
 )};
 
-window.FindMovieBuddy = FindMovieBuddy;
+//window.FindMovieBuddy = FindMovieBuddy;
 
 
+export default SingleFriend;
 

@@ -16,4 +16,5 @@ var Friends = ({fof, sendRequest, sendWatchRequest, myFriends}) => (
 
 );
 
-window.Friends = Friends;
+//window.Friends = Friends;
+export default Friends;

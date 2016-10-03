@@ -103,4 +103,6 @@ class SingleMovieRating extends React.Component {
   }
 };
 
-window.SingleMovieRating = SingleMovieRating;
+//window.SingleMovieRating = SingleMovieRating;
+
+export default SingleMovieRating;

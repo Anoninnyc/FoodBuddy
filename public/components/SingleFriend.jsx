@@ -25,3 +25,5 @@ console.log(friendName,'friendName');
 };
 
 window.SingleFriend = SingleFriend;
+
+export default SingleFriend;

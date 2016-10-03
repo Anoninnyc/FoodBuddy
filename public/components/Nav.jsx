@@ -23,4 +23,6 @@ const Nav = ({onClick, Home, find, logout, name}) => (
     </div>
 );
 
-window.Nav = Nav;
+//window.Nav = Nav;
+
+export default Nav;

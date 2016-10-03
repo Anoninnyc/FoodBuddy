@@ -126,4 +126,6 @@ class Home extends React.Component {
   }
 }
 
-window.Home = Home;
+//window.Home = Home;
+
+export default Home;
