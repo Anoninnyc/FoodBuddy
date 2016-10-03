@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MovieListEntry from './movies/MovieListEntry'
 
 const SingleFriend = ({moviesOfFriend,onClick,friendName, change}) => {
 
