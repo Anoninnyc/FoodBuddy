@@ -1,3 +1,6 @@
+import React, { Component } from 'react';
+
+
 const MovieList = ({movies, change}) => (
 	<div className='movieList'>
 		{ movies.map((movie, i) => <MovieListEntry
