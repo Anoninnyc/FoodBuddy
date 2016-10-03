@@ -32,4 +32,4 @@ const Responses = ({movie, responsesInfo, responseAnswer, responseType, remove, 
   }
 };
 
-default export Responses;
+ export default Responses;
