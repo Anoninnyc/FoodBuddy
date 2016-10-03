@@ -392,11 +392,6 @@ class App extends Component {
   }
 
   render() {
-    const nav=<Nav name={this.state.currentUser}
-            find={this.findMovieBuddies}
-            onClick={this.changeViews}
-            logout={this.logout} 
-            />
 
     if (this.state.view==='Login') {
       return (<LogIn changeViews={this.changeViews} setCurrentUser={this.setCurrentUser}/>);
@@ -456,7 +451,11 @@ class App extends Component {
     }
     else if (this.state.view === "Home") {
       return (
-        <div>
+        <Nav name={this.state.currentUser}
+            find={this.findMovieBuddies}
+            onClick={this.changeViews}
+            logout={this.logout} 
+            />
             {nav}
           <Home 
             change={this.changeViewsMovie}
@@ -516,4 +515,4 @@ var Url = 'https://reelfriendz.herokuapp.com';
 // var Url = 'http://127.0.0.1:3000';
 window.Url = Url
 
-export default App
+export default App;
