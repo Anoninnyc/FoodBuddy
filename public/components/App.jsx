@@ -15,7 +15,7 @@ import MyRatings from './MyRatings/MyRatings'
 
 
 
-class App extends React {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = startingState;

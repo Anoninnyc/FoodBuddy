@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-class LogIn extends React {
+class LogIn extends Component {
 
   constructor(props) {
     super(props);
@@ -11,6 +11,7 @@ class LogIn extends React {
       password: '',
       errorMsg: ''
     };
+    
   }
 
   handleChange(event) {
