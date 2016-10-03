@@ -370,7 +370,7 @@ class App extends Component {
         });
       });
     }
-
+//
   removeRequest(person, self, movie) {
     console.log('trying to rem req');
     var that= this;
