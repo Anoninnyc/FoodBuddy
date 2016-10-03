@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-
+import React, { Component } from 'react'
+import MovieListEntry from './MovieListEntry'
 
 const MovieList = ({movies, change}) => (
 	<div className='movieList'>
