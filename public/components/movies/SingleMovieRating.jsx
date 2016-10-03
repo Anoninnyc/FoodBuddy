@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+//////
 
-
-class SingleMovieRating extends React {
+class SingleMovieRating extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       value: '',
       movie: this.props.currentMovie,
