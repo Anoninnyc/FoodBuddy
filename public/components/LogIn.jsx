@@ -28,6 +28,10 @@ class LogIn extends Component {
     }
   }
 
+  componentWillUnmount() {
+    this.isUnmounted = true;
+  }
+
 
 
 
@@ -56,9 +60,11 @@ class LogIn extends Component {
         if (response[0] === 'it worked') {
           // console.log('hi');
           
+          if (!this.isUnmounted){
           this.setState({
             errorMsg: ''
           });
+        }
         
 
           this.props.changeViews('Home');
@@ -68,10 +74,11 @@ class LogIn extends Component {
       })
       .catch(err=> {
         // console.log(err);
-      
+       if (!this.isUnmounted){
         this.setState({
           errorMsg: 'invalid login information'
         });
+      }
        
       })
     }
