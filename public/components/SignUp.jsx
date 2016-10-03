@@ -114,7 +114,7 @@ class SignUp extends Component {
 
 }
 
-window.SignUp = SignUp;
+export default SignUp;
 
 
 

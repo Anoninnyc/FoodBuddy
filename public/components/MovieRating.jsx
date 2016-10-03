@@ -39,4 +39,4 @@ class MovieRating extends Component {
   }
 }
 
-window.MovieRating = MovieRating;
+export default MovieRating;
