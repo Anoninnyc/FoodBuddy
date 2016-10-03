@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import MovieList from '../movies/MovieList'
 
 class Home extends Component {
   constructor(props) {
