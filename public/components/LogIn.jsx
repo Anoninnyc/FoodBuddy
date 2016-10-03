@@ -9,7 +9,8 @@ class LogIn extends Component {
     this.state = {
       username: '',
       password: '',
-      errorMsg: ''
+      errorMsg: '',
+      loggedIn:false,
     };
     
   }
@@ -26,6 +27,9 @@ class LogIn extends Component {
       });
     }
   }
+
+
+  
 
   handleLogIn() {
     if (!this.state.username.length && !this.state.password.length) {
@@ -52,9 +56,9 @@ class LogIn extends Component {
         if (response[0] === 'it worked') {
           // console.log('hi');
           
-          this.setState({
-            errorMsg: ''
-          });
+          // this.setState({
+          //   errorMsg: ''
+          // });
 
           this.props.changeViews('Home');
           this.props.setCurrentUser(response[1]);
