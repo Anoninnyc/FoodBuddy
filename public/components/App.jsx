@@ -221,7 +221,7 @@ class App extends Component {
       movie: movie
     });
   }
-  /////////////////////
+  ///////////////////////
   /////Nav change
   /////////////////////
   changeViews(targetState) {
@@ -392,6 +392,7 @@ class App extends Component {
   }
 
   render() {
+    
 
     if (this.state.view==='Login') {
       return (<LogIn changeViews={this.changeViews} setCurrentUser={this.setCurrentUser}/>);
@@ -402,7 +403,11 @@ class App extends Component {
     else if (this.state.view === "MovieSearchView") {
       return ( 
         <div> 
-          <div>{nav}</div>
+          <div><Nav name={this.state.currentUser}
+            find={this.findMovieBuddies}
+            onClick={this.changeViews}
+            logout={this.logout} 
+            /></div>
           <div>
           <MovieRating 
             handleSearchMovie={this.getMovie}
@@ -436,7 +441,11 @@ class App extends Component {
     } else if (this.state.view === "Friends" ) {
       return (
         <div>
-            {nav}
+            <Nav name={this.state.currentUser}
+            find={this.findMovieBuddies}
+            onClick={this.changeViews}
+            logout={this.logout} 
+            />
           <Friends 
             sendWatchRequest={this.sendWatchRequest} 
             fof= {this.focusOnFriend} 
@@ -451,12 +460,12 @@ class App extends Component {
     }
     else if (this.state.view === "Home") {
       return (
-        <Nav name={this.state.currentUser}
+        <div>
+            <Nav name={this.state.currentUser}
             find={this.findMovieBuddies}
             onClick={this.changeViews}
             logout={this.logout} 
             />
-            {nav}
           <Home 
             change={this.changeViewsMovie}
           />
@@ -466,7 +475,11 @@ class App extends Component {
       let that = this;
       return (
         <div onClick={()=>console.log(that.state)}>
-            {nav}
+            <Nav name={this.state.currentUser}
+            find={this.findMovieBuddies}
+            onClick={this.changeViews}
+            logout={this.logout} 
+            />
           <SingleMovieRating 
             compatibility={this.state.myFriends}
             currentMovie={this.state.movie}
@@ -478,7 +491,11 @@ class App extends Component {
     } else if (this.state.view==='singleFriend') {
       return (
         <div>
-            {nav}
+            <Nav name={this.state.currentUser}
+            find={this.findMovieBuddies}
+            onClick={this.changeViews}
+            logout={this.logout} 
+            />
           <SingleFriend 
             moviesOfFriend={this.state.individualFriendsMovies} 
             friendName={this.state.friendToFocusOn} 
@@ -490,7 +507,11 @@ class App extends Component {
     } else if (this.state.view === "FNMB") {
       return (
         <div>
-            {nav}
+            <Nav name={this.state.currentUser}
+            find={this.findMovieBuddies}
+            onClick={this.changeViews}
+            logout={this.logout} 
+            />
           <FindMovieBuddy 
             buddyfunc={this.buddyRequest} 
             buddies={this.state.potentialMovieBuddies} 
@@ -500,7 +521,11 @@ class App extends Component {
     } else if (this.state.view === "MyRatings") {
       return (
         <div>
-            {nav}
+            <Nav name={this.state.currentUser}
+            find={this.findMovieBuddies}
+            onClick={this.changeViews}
+            logout={this.logout} 
+            />
           <MyRatings 
             change={this.changeViewsMovie}
           />
