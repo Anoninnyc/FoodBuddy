@@ -55,11 +55,11 @@ class LogIn extends Component {
       .then(response => {
         if (response[0] === 'it worked') {
           // console.log('hi');
-          if (this.isMounted()){
+          
           this.setState({
             errorMsg: ''
           });
-        }
+        
 
           this.props.changeViews('Home');
           this.props.setCurrentUser(response[1]);
