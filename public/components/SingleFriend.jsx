@@ -1,3 +1,5 @@
+import React, { Component } from 'react';
+
 const SingleFriend = ({moviesOfFriend,onClick,friendName, change}) => {
 
 console.log(friendName,'friendName');

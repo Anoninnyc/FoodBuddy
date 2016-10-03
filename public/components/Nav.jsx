@@ -1,3 +1,6 @@
+import React, { Component } from 'react';
+
+
 const Nav = ({onClick, Home, find, logout, name}) => (
     <div>
       <div className="navbar-fixed movieBuddyNav">

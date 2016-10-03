@@ -1,3 +1,5 @@
+import React, { Component } from 'react';
+
 var Friends = ({fof, sendRequest, sendWatchRequest, myFriends}) => (
  
 <div className="myFriends collection">

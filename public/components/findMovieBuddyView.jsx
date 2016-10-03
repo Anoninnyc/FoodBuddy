@@ -1,3 +1,6 @@
+import React, { Component } from 'react';
+
+
 const FindMovieBuddy = ({buddyfunc, buddies}) => {
 	let empty=buddies.length===0?"You've friended everybody!":"";
   return (
