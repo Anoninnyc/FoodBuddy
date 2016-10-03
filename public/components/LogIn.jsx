@@ -68,11 +68,11 @@ class LogIn extends Component {
       })
       .catch(err=> {
         // console.log(err);
-         if (this.isMounted()){
+      
         this.setState({
           errorMsg: 'invalid login information'
         });
-       }
+       
       })
     }
   }
