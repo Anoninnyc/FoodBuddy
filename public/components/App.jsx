@@ -320,11 +320,11 @@ class App extends Component {
             $("#reqSent,#reqSent2").fadeIn(1000);
             $("#reqSent,#reqSent2").fadeOut(1000);
           }
-        //  if (!this.isUnmounted){
-        //   this.setState({
-        //     requestsOfCurrentUser:resp.concat([person])
-        //   })
-        // }
+         if (!this.isUnmounted){
+          this.setState({
+            requestsOfCurrentUser:resp.concat([person])
+          })
+        }
         
       });
 
