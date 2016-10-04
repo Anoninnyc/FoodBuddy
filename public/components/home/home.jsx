@@ -129,6 +129,5 @@ class Home extends Component {
   }
 }
 
-//window.Home = Home;
 
 export default Home;

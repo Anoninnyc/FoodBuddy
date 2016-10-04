@@ -74,7 +74,7 @@ class SignUp extends Component {
       .catch(err=> {
          console.log(err);
         this.setState({
-          errorMsg: 'username already exist, please use a different username'
+          errorMsg: 'Username already taken'
         });
       })
     }
@@ -87,7 +87,7 @@ class SignUp extends Component {
       <div className='icon-block col s7'>
         <h2 className="header logo">Welcome to ReelPals</h2>
         <h5 className="header col s12 light description">
-          Let's find your next buddy by your movie taste!
+          Find your next buddy by movie taste!
         </h5>
       </div>
       <div className='login icon-block'>

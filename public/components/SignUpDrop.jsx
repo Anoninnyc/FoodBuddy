@@ -6,7 +6,7 @@ class SignUpDrop extends React.Component {
       files: []
     };
   }
-
+//
   uploadFile(event) {
     var fd = ('file', this.refs.file.getDOMNode().file[0]);
 
