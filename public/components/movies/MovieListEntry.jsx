@@ -43,7 +43,7 @@ class MovieListEntry extends Component {
         <div className='right col s9'>
     			<h5 className='movieTitle' onClick={() => (this.props.change("SingleMovie", movie))}>{movie.title}</h5>
     			<p className='movieYear'>{movie.release_date}</p>
-    			<p className='movieDescription'>{movie.description}</p>
+    			<p className='movieDescription'>{parseDesc(movie.description)}</p>
           <ReviewComponent
             review={movie.review} 
             title={movie.title}
@@ -63,3 +63,12 @@ class MovieListEntry extends Component {
 }
 
 export default MovieListEntry
+
+
+function parseDesc(desc){
+  if (desc.length>250){
+    return `${desc.slice(0,244)}...`;
+  } else {
+    return desc;
+  }
+}
