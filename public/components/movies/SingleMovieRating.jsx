@@ -75,7 +75,7 @@ class SingleMovieRating extends Component {
   render() {
     let that = this;
     let movie = this.state.movie;
-    return (//
+    return (
       <div className='Home collection' onClick={()=> console.log(that.state)}>
       <button className="center waves-effect waves-light btn" id="goBack" onClick={()=>{this.props.change("Home")}}>Back to recent releases</button>
         <div className="movieEntry collection-item row">

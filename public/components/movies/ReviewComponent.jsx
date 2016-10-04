@@ -68,7 +68,7 @@ class ReviewComponent extends Component {
     if (this.state.editMode) {
   		return (
         <div className='review'>
-          Enter your review, 255 characters maximum
+          Enter your review
            <textarea cols="40" rows="5" value={this.state.currentInput} onChange={this.handleChange.bind(this)} maxlength="255"></textarea>
            <button onClick={this.handleSubmit.bind(this)}>submit review</button>
            <button onClick={this.closeEdit.bind(this)}>cancel</button>

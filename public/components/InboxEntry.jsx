@@ -9,9 +9,9 @@ const InboxEntry = ({inboxName, accept, requestMovie, decline, requestType, mess
   <div className="response col s9">
     <span className="inboxFriend"> Name:{inboxName} 
         <a className="waves-effect waves-light btn accept" onClick={()=>{accept(inboxName, requestMovie)}}> 
-        Accept {inboxName}'s {requestType} request {requestMovie}</a>
+        Accept {inboxName}'s {requestType} request {movieParse(requestMovie}</a>
         <a className="waves-effect waves-light btn decline" onClick={()=>{decline(inboxName, requestMovie)}}>
-        Decline {inboxName}'s {requestType} request {requestMovie}</a></span>
+        Decline {inboxName}'s {requestType} request {movieParse(requestMovie)}</a></span>
     <br/> Message:{messageInfo === null ? 'No message' : messageInfo}
   </div>
 </div>
@@ -19,3 +19,13 @@ const InboxEntry = ({inboxName, accept, requestMovie, decline, requestType, mess
 );
 
 export default InboxEntry;
+
+function movieParse(movie){
+  if (movie===null){
+    return null;
+  } else if (movie.length<12){
+    return movie;
+  } else {
+    return `${movie.slice(0,11)}...`;
+  }
+}

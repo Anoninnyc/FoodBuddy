@@ -319,6 +319,10 @@ textarea {
   margin-left: 25px;
 }
 
+button#goBack {
+  position: static;
+}
+
 /*star rating*/
 
 #star-rating {
