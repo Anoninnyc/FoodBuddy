@@ -177,8 +177,6 @@ class App extends Component {
   }
 
 
-
-
   logout() {
     $.post(Url + '/logout').then(response=> {
       // console.log(response);
@@ -412,6 +410,12 @@ class App extends Component {
   }
 
   render() {
+
+    const nav = `<Nav name={this.state.currentUser}
+            find={this.findMovieBuddies}
+            onClick={this.changeViews}
+            logout={this.logout} 
+            />`
     
 
     if (this.state.view==='Login') {
@@ -481,11 +485,7 @@ class App extends Component {
     else if (this.state.view === "Home") {
       return (
         <div>
-            <Nav name={this.state.currentUser}
-            find={this.findMovieBuddies}
-            onClick={this.changeViews}
-            logout={this.logout} 
-            />
+            {nav}
           <Home 
             change={this.changeViewsMovie}
           />
