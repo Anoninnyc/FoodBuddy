@@ -28,4 +28,4 @@ function movieParse(movie){
   } else {
     return `${movie.slice(0,11)}...`;
   }
-}
+}//
