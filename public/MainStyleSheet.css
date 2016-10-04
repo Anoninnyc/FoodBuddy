@@ -51,6 +51,12 @@ h1.signature {
     font-weight: bold;
     font-family: cursive;
 }
+
+p.post {
+  position: relative;
+  left: 105px;
+  top: -29px;
+}
 /*
   ========================================
   login or signup forms
