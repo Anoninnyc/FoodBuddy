@@ -114,7 +114,7 @@ class Home extends Component {
         <div className='searchMovie'>
           <input type ='text' id='movieInput' 
             className='movieInput'
-            placeholder='find a movie'
+            placeholder='Find a Movie'
             value={this.state.search}
             onChange={this.handleChange.bind(this)}
             onKeyPress={this.handleSearch.bind(this)}/>
