@@ -411,11 +411,11 @@ class App extends Component {
 
   render() {
 
-    const nav = `<Nav name={this.state.currentUser}
+    const nav = <Nav name={this.state.currentUser}
             find={this.findMovieBuddies}
             onClick={this.changeViews}
             logout={this.logout} 
-            />`
+            />
     
 
     if (this.state.view==='Login') {
