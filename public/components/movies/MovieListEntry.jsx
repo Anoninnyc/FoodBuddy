@@ -39,6 +39,7 @@ class MovieListEntry extends Component {
 
   	return (
   		<div className='movieEntry collection-item row'>
+      <h1 id="goBack" onClick={()=>{this.props.change("Home")}}> Go back to all movies</h1>
   			<img className='moviethumnail col s3' src={movie.poster} onClick={() => (this.props.change("SingleMovie", movie))} alt="no_image_available.gif"/>
         <div className='right col s9'>
     			<h5 className='movieTitle' onClick={() => (this.props.change("SingleMovie", movie))}>{movie.title}</h5>
