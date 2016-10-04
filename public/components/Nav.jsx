@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
 
-const Nav = ({onClick, Home, find, logout, name}) => (
+const Nav = ({onClick, find, logout, name}) => (
     <div>
       <div className="navbar-fixed movieBuddyNav">
         <nav>
           <div className="nav-wrapper">
             <a href="#" onClick={() => (onClick("Home"))} className="brand-logo center">ReelPals</a>
             <ul id="nav-mobile" className="left hide-on-med-and-down">
-              <li><a className={(Home === true) ? "active" : ""} onClick={() => (onClick("Home"))}>Home</a></li>
+              <li><a onClick={() => (onClick("Home"))}>Home</a></li>
               <li><a onClick={() => (onClick("MyRatings"))}>My Ratings</a></li>
               <li><a onClick={() => (onClick("Friends"))}>My Friends</a></li>
               <li><a onClick={find}>New Buddies</a></li>
@@ -25,7 +25,5 @@ const Nav = ({onClick, Home, find, logout, name}) => (
       </div>
     </div>
 );
-
-//window.Nav = Nav;
 
 export default Nav;
