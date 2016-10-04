@@ -11,6 +11,7 @@ import SingleMovieRating from './movies/SingleMovieRating'
 import SingleFriend from './SingleFriend'
 import FindMovieBuddy from './findMovieBuddyView'
 import MyRatings from './MyRatings/MyRatings'
+import {initialState, mapRes} from '../utils'
 
 
 
@@ -18,21 +19,7 @@ import MyRatings from './MyRatings/MyRatings'
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      view: 'Login',
-      friendsRatings: [],
-      movie: null,
-      friendRequests: [],
-      pendingFriendRequests: [],
-      myFriends: [],
-      friendToFocusOn: '',
-      individualFriendsMovies: [],
-      potentialMovieBuddies: {},
-      username: null,
-      requestResponses: [],
-      currentUser: null,
-      requestsOfCurrentUser: []
-  };
+    this.state = initialState;
     this.sendWatchRequest=this.sendWatchRequest.bind(this);
     this.getFriends=this.getCurrentFriends.bind(this);
     this.myFriends=this.state.myFriends;
@@ -180,21 +167,7 @@ class App extends Component {
   logout() {
     $.post(Url + '/logout').then(response=> {
       // console.log(response);
-      this.setState({
-      view: 'Login',
-      friendsRatings: [],
-      movie: null,
-      friendRequests: [],
-      pendingFriendRequests: [],
-      myFriends: [],
-      friendToFocusOn: '',
-      individualFriendsMovies: [],
-      potentialMovieBuddies: {},
-      username: null,
-      requestResponses: [],
-      currentUser: null,
-      requestsOfCurrentUser: []
-  });
+      this.setState(initialState);
     });
   }
 
@@ -353,6 +326,7 @@ class App extends Component {
       const pFR=[];
       const rR=[];
        console.log('response to lpfr', response);
+       
 
       for (var i=0;i<response[0].length;i++){
         const requestor=response[0][i]['requestor'];
@@ -420,11 +394,15 @@ class App extends Component {
 
     if (this.state.view==='Login') {
       return (
-      <LogIn changeViews={this.changeViews} setCurrentUser={this.setCurrentUser}/>
+      <LogIn changeViews={this.changeViews} 
+        setCurrentUser={this.setCurrentUser}
+      />
       );
     } else if (this.state.view==="SignUp") {
       return (
-      <SignUp changeViews={this.changeViews} setCurrentUser={this.setCurrentUser} />
+      <SignUp changeViews={this.changeViews} 
+        setCurrentUser={this.setCurrentUser} 
+      />
       );
     } 
     //this view is added for moviesearch rendering
@@ -449,8 +427,7 @@ class App extends Component {
               accept= {this.acceptFriend} 
               decline={this.declineFriend} 
               listRequests={this.listPendingFriendRequests} 
-              pplWhoWantToBeFriends={this.state.pendingFriendRequests.map(
-                a=>( [a.requestor,a.requestTyp,a.movie===null?"": a.movie,"Message:"+ a.message==='null'?"none":a.message]))} 
+              pplWhoWantToBeFriends={mapRes(this.state.pendingFriendRequests)} 
               remove={this.removeRequest}
             />
         </div>
