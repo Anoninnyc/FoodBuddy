@@ -13,7 +13,7 @@ import FindMovieBuddy from './findMovieBuddyView'
 import MyRatings from './MyRatings/MyRatings'
 import {initialState, mapRes} from '../utils'
 
-
+console.log(initialState);
 
 
 class App extends Component {
