@@ -256,6 +256,10 @@ textarea.materialize-textarea:focus:not([readonly]) {
   color: #3b7fc7;
 }
 
+.movieTitle:hover{
+  cursor:pointer;
+}
+
 .movieEntry .review {
   margin: 1px, auto, 1px, auto;
   font-size: 14px;
