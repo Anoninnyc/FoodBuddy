@@ -14,7 +14,7 @@ const initialState = {
   requestsOfCurrentUser: []
 }
 
-const mapRes=(pending)=>(
+const mapRes=pending=>(
 	pending.map(a=>(
 		[a.requestor,a.requestTyp,a.movie===null?"": a.movie,"Message:"+ a.message==='null'?"none":a.message]
 	))   
