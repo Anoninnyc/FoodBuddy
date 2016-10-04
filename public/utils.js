@@ -20,7 +20,7 @@ const mapRes=pending=>(
 	))   
 )
 
-export default {
+module.exports= {
   initialState,
   mapRes,
 }
