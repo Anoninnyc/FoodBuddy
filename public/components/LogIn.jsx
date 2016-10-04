@@ -91,9 +91,9 @@ class LogIn extends Component {
         <div className='icon-block col s7'>
           <h2 className="header logo">Welcome to ReelPals</h2>
           <h5 className="header col s12 light description">
-            find your next buddy by  movie taste!
+            Find your next buddy by movie taste!
           </h5>
-    <h1 className="signature">Made with   by PiquantToothbrush </h1>
+    <h1 className="signature">Made with <p id="post">by PiquantToothbrush</p> </h1>
         </div>
         <div className='login icon-block'>
           <a className="waves-effect waves-light btn" onClick={() => this.props.changeViews('SignUp')}>Go to Sign Up</a>
