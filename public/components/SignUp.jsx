@@ -89,9 +89,9 @@ class SignUp extends Component {
         <h5 className="header col s12 light description">
           Find your next buddy by movie taste!
         </h5>
-      </div>
     <h1 className="signature">Made with <p className="post">by PiquantToothbrush</p> </h1>
      <img className="heart" src="http://bit.ly/2doVuIQ" />
+      </div>
       <div className='login icon-block'>
         <a className="waves-effect waves-light btn" onClick={() => this.props.changeViews('Login')}>Go to Log In</a>
         <div className="or">OR</div>

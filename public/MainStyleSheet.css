@@ -57,6 +57,14 @@ p.post {
   left: 105px;
   top: -29px;
 }
+
+img.heart {
+  width: 50px;
+  position: relative;
+  bottom: -370px;
+  left: 62px;
+}
+
 /*
   ========================================
   login or signup forms
