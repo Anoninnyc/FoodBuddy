@@ -33,7 +33,6 @@ class App extends Component {
     this.changeViewsMovie=this.changeViewsMovie.bind(this);
     this.changeViewsFriends=this.changeViewsFriends.bind(this);
     this.findMovieBuddies=this.findMovieBuddies.bind(this);
-    this.buddyRequest=this.buddyRequest.bind(this);
     this.listPendingFriendRequests=this.listPendingFriendRequests.bind(this);
     this.focusOnFriend=this.focusOnFriend.bind(this);
     this.removeRequest=this.removeRequest.bind(this);
@@ -260,13 +259,6 @@ class App extends Component {
       friendToFocusOn: friend
     });
   }
-
-
-  buddyRequest(person, idx) {
-    console.log(person, idx);
-    this.sendRequest(person, idx);
-  }
-
 
   sendRequest(a, idx) {
     console.log(typeof a);
@@ -497,7 +489,7 @@ class App extends Component {
         <div>
             {nav}
           <FindMovieBuddy 
-            buddyfunc={this.buddyRequest} 
+            buddyfunc={this.sendRequest} 
             buddies={this.state.potentialMovieBuddies} 
           />
         </div>
