@@ -75,7 +75,6 @@ class MyRatings extends Component {
 
 
   render() {
-    console.log(this.props.view,'this.props.view')
     var lable;
     var results;
     if (this.state.allRatedMovies === false) {

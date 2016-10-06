@@ -497,7 +497,6 @@ class App extends Component {
             {nav}
           <MyRatings 
             change={this.changeViewsMovie}
-            view={this.state.view}
           />
         </div>
       );
