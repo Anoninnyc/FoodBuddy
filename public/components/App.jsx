@@ -39,7 +39,6 @@ class App extends Component {
     this.removeRequest=this.removeRequest.bind(this);
   }
 
-
   getCurrentFriends() {
 
     // console.log('testinggg');
@@ -104,6 +103,7 @@ class App extends Component {
   }
 
   findMovieBuddies() {
+    console.log('this.state.MyFriends', this.state.MyFriends);
    var that=this;
     $.post(Url + '/findMovieBuddies',{dummy:'info'},(resp, err)=> {
       const sorted=resp.sort((a,b)=>(b[1]-a[1]));
@@ -112,10 +112,11 @@ class App extends Component {
         for (let i=0;i<sorted.length;i++){
           let unique=true;
           for (let x=0;x<myFriends.length;x++){
-            if (sorted[i][0]===myFriends[x][0]){
+            if (sorted[i][0]===myFriends[x][0] && this.state.myFriends.indexOf(sorted[i][0])>-1){
               unique=false;
             }
           }
+
           if (unique){
             uniqueFriends.push(sorted[i]);
           }
@@ -126,7 +127,7 @@ class App extends Component {
         potentialMovieBuddies:uniqueFriends
       })
 
-   this.getCurrentFriends();
+   //this.getCurrentFriends();
     })
   }
 
@@ -223,12 +224,15 @@ class App extends Component {
     }
 
     if (targetState==='Home'){
-      // this.getCurrentFriends()
+      //this.getCurrentFriends();
       this.sendRequest();
     }
 
      if (targetState==="Inbox"){
        this.listPendingFriendRequests()
+     }
+     if (targetState==='FNMB'){
+       this.getCurrentFriends();
      }
 
     this.setState({
