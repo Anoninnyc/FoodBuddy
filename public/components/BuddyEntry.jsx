@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 const BuddyEntry = ({Buddy, BuddyScore,buddyfunc, idx}) => (
   <div className='collection-item row'>
     <div className="col s3">
-    	<img className='profilethumnail' src={'https://unsplash.it/170/170/?random'}/>
+    	<img className='profilethumnail' src={'https://bit.ly/1iKugwI'}/>
     </div>
     <div id="Friend" className="buddy col s9">
    		<h3 className="buddyName">{Buddy}</h3>

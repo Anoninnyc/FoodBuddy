@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 const FriendEntry = ({Friend, fof, Comp }) =>  (
   <div className="FriendEntry collection-item row" >
   	<div className="col s3">
-  		<img className='profilethumnail' src={'https://unsplash.it/170/170/?random'}/>
+  		<img className='profilethumnail' src={'https://bit.ly/1iKugwI'}/>
   	</div>
     <div id="Friend" className="friendEntry col s9">
     	<a className='friendEntryIndividual'><h3 className="friendName" onClick={()=>{fof(Friend)}}>{Friend}</h3></a>  

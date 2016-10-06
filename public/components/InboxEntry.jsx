@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 const InboxEntry = ({inboxName, accept, requestMovie, decline, requestType, messageInfo}) => (
 <div className="InboxEntry Reponses collection-item row">
   <div className="col s3">
-    <img className='profilethumnail' src={ 'https://unsplash.it/170/170/?random'}/>
+    <img className='profilethumnail' src={ 'http://bit.ly/1iKugwI'}/>
   </div>
   <div className="response col s9">
     <span className="inboxFriend"> Name:{inboxName} 

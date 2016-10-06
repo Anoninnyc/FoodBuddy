@@ -40,20 +40,25 @@ class App extends Component {
 
   getCurrentFriends() {
     // console.log('testinggg');
-    $.post(Url + '/getFriends',{test:'info'}, (a, b) => {
-      // console.log('what you get back from server for get friends',a,b);
-             for (let i=0;i<a.length;i++){
-                if (a[i][1]===null){
-                  a[i][1] = "No comparison to be made";
-                }              
-              }
+    $.post(Url + '/getFriends',{test:'info'}, (friends, err) => {
 
-       const final= a.sort((a,b)=>{return b[1]-a[1]});
-       console.log('this is what GCF is setting as all friends', final);
+
+      friends.forEach(friend=>{
+        if (friend[1]===null){
+          friend[1]="No comparison to be made"
+        }
+      });
+             // for (let i=0;i<a.length;i++){
+             //    if (a[i][1]===null){
+             //      a[i][1] = "No comparison to be made";
+             //    }              
+             //  }
+
+       const sortedFriends= friends.sort((a,b)=>{return b[1]-a[1]});
+       console.log('this is what GCF is setting as all friends', sortedFriends);
       this.setState({
-        myFriends:final
+        myFriends:sortedFriends
       })
-       console.log('thes are my friends!!!!!!!!!!!!!!!!!',this.state.myFriends);
     })
   }
 
@@ -64,45 +69,34 @@ class App extends Component {
 
   acceptFriend(personToAccept, movie) {
   
-    console.log('calling aF');
-    var that=this;
+    console.log('calling accept Friend');
+
     $.post(Url + '/accept',{personToAccept:personToAccept, movie: movie},(resp,err)=> {
-      console.log('it came back!', that);
       let pending=this.state.pendingFriendRequests;
 
-
       let reqs = pending.map((a)=>(a.requestor));
-
-
-      console.log('before', pending, reqs, personToAccept);
+      //console.log('before', pending, reqs, personToAccept);
       pending.splice(reqs.indexOf(personToAccept),1);
       this.setState({pendingFriendRequests:pending});
       console.log('after', this.state.pendingFriendRequests);
-
       //that.listPendingFriendRequests();
     })
-    
     // console.log('refreshed inbox, should delete friend request on the spot instead of moving')
   }
 
   declineFriend(personToDecline, movie) {
     var that=this;
     $.post(Url + '/decline',{personToDecline:personToDecline, movie: movie},(resp, err)=> {
-      // console.log('this is the state after declining friend, ', this.state);
         let pending=this.state.pendingFriendRequests;
         let reqs = pending.map((a)=>(a.requestor));
-        console.log('before', pending, reqs, personToDecline);
         pending.splice(reqs.indexOf(personToDecline),1);
         this.setState({pendingFriendRequests:pending});
-        console.log('after', this.state.pendingFriendRequests);
-
-      //that.listPendingFriendRequests();//
     });
   }
 
+
   findMovieBuddies() {
     console.log('this.state.MyFriends', this.state.myFriends);
-   var that=this;
     $.post(Url + '/findMovieBuddies',{dummy:'info'},(resp, err)=> {
       const friendNames=this.state.myFriends.map((info)=>(info[0]))
       console.log("friendNames", friendNames);
@@ -113,7 +107,7 @@ class App extends Component {
         for (let i=0;i<sorted.length;i++){
           let unique=true;
           for (let x=0;x<myFriends.length;x++){
-            if (sorted[i][0]===myFriends[x][0] || friendNames.indexOf(sorted[i][0])>-1){
+            if (sorted[i][0]===myFriends[x][0]/* || friendNames.indexOf(sorted[i][0])>-1*/){
               unique=false;
             } 
           }
@@ -129,8 +123,6 @@ class App extends Component {
         view:"FNMB",
         potentialMovieBuddies:uniqueFriends
       })
-
-   //this.getCurrentFriends();
     })
   }
 
@@ -219,16 +211,12 @@ class App extends Component {
   /////Nav change
   /////////////////////
   changeViews(targetState) {
-    // console.log(this.state);
 
     if (targetState==='Friends'){
-      // console.log('you switched to friends!!')
       this.getCurrentFriends()
-      //this.sendRequest();
     }
 
     if (targetState==='Home'){
-      //this.getCurrentFriends();
       this.sendRequest();
     }
 

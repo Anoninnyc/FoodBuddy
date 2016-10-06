@@ -7,7 +7,7 @@ const Responses = ({movie, responsesInfo, responseAnswer, responseType, remove, 
     return (
       <div className="Reponses collection-item row">
         <div className="col s3">
-          <img className='profilethumnail' src={'https://unsplash.it/170/170/?random'}/>
+          <img className='profilethumnail' src={'https://bit.ly/1iKugwI'}/>
         </div>
         <div className="response col s9">
           <div className="responseMsg">{responsesInfo} said {responseAnswer} to your {responseType} request to watch {movie}!  
@@ -20,7 +20,7 @@ const Responses = ({movie, responsesInfo, responseAnswer, responseType, remove, 
     return (
       <div className="Reponses collection-item row">
         <div className="col s3">
-          <img className='profilethumnail' src={'https://unsplash.it/170/170/?random'}/>
+          <img className='profilethumnail' src={'http://bit.ly/1iKugwI'}/>
         </div>
 
         <div className="response col s9">

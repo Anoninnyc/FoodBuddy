@@ -27,7 +27,7 @@ class SingleMovieRatingEntry extends React.Component {
     return (
       <div className="collection-item row" onClick={()=> console.log(that.props)}>
         <div className="col s3">
-          <img className='profilethumnail' src={'https://unsplash.it/170/170/?random'}/>
+          <img className='profilethumnail' src={'https://bit.ly/1iKugwI'}/>
         </div>
         <div id="Friend" className="MovieEntryFriend col s9">
           <div className="top">
