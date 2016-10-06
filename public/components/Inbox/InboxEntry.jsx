@@ -23,9 +23,9 @@ export default InboxEntry;
 function movieParse(movie){
   if (movie===null){
     return null;
-  } else if (movie.length<15){
-    return movie;
+  } else if (movie.length<14){
+    return `for ${movie}`;
   } else {
-    return `${movie.slice(0,14)}...`;
+    return `for ${movie.slice(0,13)}...`;
   }
-}//
+}

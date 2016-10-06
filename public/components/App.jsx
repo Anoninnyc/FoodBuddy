@@ -33,7 +33,7 @@ class App extends Component {
     this.findMovieBuddies=this.findMovieBuddies.bind(this);
     this.listPendingFriendRequests=this.listPendingFriendRequests.bind(this);
     this.focusOnFriend=this.focusOnFriend.bind(this);
-    this.removeRequest=this.removeRequest.bind(this);
+    this.removeRequest=this.removeRequest.bind(this);//
   }
 
   getCurrentFriends() {
