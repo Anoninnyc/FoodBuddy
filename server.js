@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 var sessions = require("client-sessions");
 var cors = require('cors');
 var compression = require('compression');
-//
+
 
 app.get('*', function(req,res,next) {
   if (req.headers['x-forwarded-proto'] !== 'https') {
