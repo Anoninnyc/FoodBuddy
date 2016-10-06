@@ -102,6 +102,7 @@ class MyRatings extends Component {
         {results}
         <MovieList movies={this.state.movies}
         change={this.props.change.bind(this)}
+        view={this.props.view}
         />
       </div>
     )

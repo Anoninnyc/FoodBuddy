@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     shell: {
       addAndDeploy: {
-        command: mess => ['npm run front-end', 'git add .', 'git commit -m' + mess, 'git push heroku master -f'].join('&&')
+        command: mess => ['git add .', 'git commit -m' + mess, 'git push heroku master -f'].join('&&')
       },
       
     },

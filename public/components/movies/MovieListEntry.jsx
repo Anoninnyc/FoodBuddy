@@ -24,6 +24,7 @@ class MovieListEntry extends Component {
   }
 
   render() {
+    console.log("this.props.view",this.props.view);
     let movie = this.props.movie;
 
     if (this.props.friendName) {
