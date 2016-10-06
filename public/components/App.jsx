@@ -103,7 +103,7 @@ class App extends Component {
   }
 
   findMovieBuddies() {
-    console.log('this.state.MyFriends', this.state.MyFriends);
+    console.log('this.state.MyFriends', this.state.myFriends);
    var that=this;
     $.post(Url + '/findMovieBuddies',{dummy:'info'},(resp, err)=> {
       const sorted=resp.sort((a,b)=>(b[1]-a[1]));
@@ -121,6 +121,7 @@ class App extends Component {
             uniqueFriends.push(sorted[i]);
           }
         }
+        console.log("unique POTENTIAL NEW friends", uniqueFriends)
 
       this.setState({
         view:"FNMB",
