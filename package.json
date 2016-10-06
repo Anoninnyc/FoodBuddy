@@ -48,7 +48,7 @@
   "scripts": {
     "front-end": "webpack --watch -p",
     "back-end": "nodemon server.js",
-    "start": "npm run front-end && npm run back-end",
+    "start": "npm run front-end && npm run back-end"
   },
   "engines": {
     "node": "6.0.0"
