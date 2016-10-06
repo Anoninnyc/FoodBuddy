@@ -40,7 +40,6 @@ class App extends Component {
   }
 
   getCurrentFriends() {
-
     // console.log('testinggg');
     $.post(Url + '/getFriends',{test:'info'}, (a, b) => {
       // console.log('what you get back from server for get friends',a,b);
@@ -406,14 +405,14 @@ class App extends Component {
       return (
       <LogIn changeViews={this.changeViews} 
         setCurrentUser={this.setCurrentUser}
-        getCurrentFriends={this.getCurrentFriends}
+        getCurrentFriends={this.getFriends}
       />
       );
     } else if (this.state.view==="SignUp") {
       return (
       <SignUp changeViews={this.changeViews} 
         setCurrentUser={this.setCurrentUser} 
-        getCurrentFriends={this.getCurrentFriends}
+        getCurrentFriends={this.getFriends}
       />
       );
     } 
