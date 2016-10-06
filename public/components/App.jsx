@@ -109,18 +109,19 @@ class App extends Component {
       const friendNames=this.state.myFriends.map((info)=>(info[0]))
       console.log("friendNames", friendNames);
       const sorted=resp.sort((a,b)=>(b[1]-a[1]));
-      console.log(sorted,"sorted")
-      const myFriends=that.myFriends;
+      console.log(sorted,"sorted", this.state.myFriends,"this.myFriends");
+      const myFriends=that.state.myFriends;
        const uniqueFriends=[];
         for (let i=0;i<sorted.length;i++){
           let unique=true;
           for (let x=0;x<myFriends.length;x++){
             if (sorted[i][0]===myFriends[x][0] || friendNames.indexOf(sorted[i][0])>-1){
               unique=false;
-            }
+            } 
           }
 
           if (unique){
+            console.log(sorted[i][0]);
             uniqueFriends.push(sorted[i]);
           }
         }
