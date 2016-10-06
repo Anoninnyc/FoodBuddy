@@ -70,6 +70,7 @@ class SignUp extends Component {
 
         this.props.changeViews("Home");
         this.props.setCurrentUser(this.state.username);
+        this.getCurrentFriends();
       })
       .catch(err=> {
          console.log(err);

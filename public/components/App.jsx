@@ -401,12 +401,14 @@ class App extends Component {
       return (
       <LogIn changeViews={this.changeViews} 
         setCurrentUser={this.setCurrentUser}
+        getCurrentFriends={this.getCurrentFriends}
       />
       );
     } else if (this.state.view==="SignUp") {
       return (
       <SignUp changeViews={this.changeViews} 
         setCurrentUser={this.setCurrentUser} 
+        getCurrentFriends={this.getCurrentFriends}
       />
       );
     } 

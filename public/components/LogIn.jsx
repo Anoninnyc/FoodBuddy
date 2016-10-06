@@ -79,6 +79,7 @@ class LogIn extends Component {
           errorMsg: 'Invalid login info'
         });
       }
+      this.getCurrentFriends();
        
       })
     }
