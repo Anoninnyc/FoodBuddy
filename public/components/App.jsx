@@ -115,7 +115,7 @@ class App extends Component {
         for (let i=0;i<sorted.length;i++){
           let unique=true;
           for (let x=0;x<myFriends.length;x++){
-            if (sorted[i][0]===myFriends[x][0] && friendNames.indexOf(sorted[i][0])>-1){
+            if (sorted[i][0]===myFriends[x][0] || friendNames.indexOf(sorted[i][0])>-1){
               unique=false;
             }
           }
