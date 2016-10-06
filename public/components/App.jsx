@@ -106,13 +106,16 @@ class App extends Component {
     console.log('this.state.MyFriends', this.state.myFriends);
    var that=this;
     $.post(Url + '/findMovieBuddies',{dummy:'info'},(resp, err)=> {
+      const friendNames=this.state.myFriends.map((info)=>(info[0]))
+      console.log("friendNames", friendNames);
       const sorted=resp.sort((a,b)=>(b[1]-a[1]));
+      console.log(sorted,"sorted")
       const myFriends=that.myFriends;
        const uniqueFriends=[];
         for (let i=0;i<sorted.length;i++){
           let unique=true;
           for (let x=0;x<myFriends.length;x++){
-            if (sorted[i][0]===myFriends[x][0] && this.state.myFriends.indexOf(sorted[i][0])>-1){
+            if (sorted[i][0]===myFriends[x][0] && friendNames.indexOf(sorted[i][0])>-1){
               unique=false;
             }
           }
@@ -144,6 +147,7 @@ class App extends Component {
     this.setState({
       currentUser: username
     })
+
   }
 
   enterNewUser(name,password) {
