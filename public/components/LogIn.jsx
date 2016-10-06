@@ -69,6 +69,7 @@ class LogIn extends Component {
 
           this.props.changeViews('Home');
           this.props.setCurrentUser(response[1]);
+          this.getCurrentFriends();
         }
          // console.log('this.state.view after state is set again',this.state.view);
       })
@@ -79,8 +80,6 @@ class LogIn extends Component {
           errorMsg: 'Invalid login info'
         });
       }
-      this.getCurrentFriends();
-       
       })
     }
   }
