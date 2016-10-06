@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FriendRatingListEntry from  './FriendRatingListEntry'
 
 const FriendRatingList = ({friendRatings, getFriendMovieRatings}) => (
   <div className="friendRating-list">

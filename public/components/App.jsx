@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
 
 import Nav  from './Nav'
-import LogIn  from './LogIn'
-import SignUp  from './SignUp'
-import MovieRating  from './MovieRating'
-import Inbox  from './Inbox'
-import Friends  from './Friends'
-import Home  from './home/home'
-import SingleMovieRating from './movies/SingleMovieRating'
-import SingleFriend from './SingleFriend'
-import FindMovieBuddy from './findMovieBuddyView'
-import MyRatings from './MyRatings/MyRatings'
+import LogIn  from './UserAuth/LogIn'
+import SignUp  from './UserAuth/SignUp'
+import MovieRating  from './Movies/MovieRating'
+import Inbox  from './Inbox/Inbox'
+import Friends  from './Friends/Friends'
+import Home  from './Home/Home'
+import SingleMovieRating from './Movies/SingleMovieRating'
+import SingleFriend from './Friends/SingleFriend'
+import FindMovieBuddy from './Friends/FindMovieBuddyView'
+import MyRatings from './Movies/MyRatings'
 import {initialState, mapRes} from '../utils'
 
-console.log(initialState);
 
-//
 class App extends Component {
   constructor(props) {
     super(props);
@@ -107,7 +105,7 @@ class App extends Component {
         for (let i=0;i<sorted.length;i++){
           let unique=true;
           for (let x=0;x<myFriends.length;x++){
-            if (sorted[i][0]===myFriends[x][0]/* || friendNames.indexOf(sorted[i][0])>-1*/){
+            if (sorted[i][0]===myFriends[x][0]){
               unique=false;
             } 
           }

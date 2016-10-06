@@ -12,9 +12,6 @@ class Inbox extends Component {
 
   render() {
 
-
-
-
     let that = this;
     var empty = this.props.pplWhoWantToBeFriends.length === 0 ? "No pending requests" : "";
     var empty2 = this.props.responsesAnswered.length === 0 ? "No request responses" : "";

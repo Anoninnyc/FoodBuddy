@@ -14,5 +14,5 @@ const BuddyEntry = ({Buddy, BuddyScore,buddyfunc, idx}) => (
   </div>
 )
 
-
+//
 export default BuddyEntry;
