@@ -85,7 +85,7 @@ class App extends Component {
   }
 
   declineFriend(personToDecline, movie) {
-    var that=this;
+  
     $.post(Url + '/decline',{personToDecline:personToDecline, movie: movie},(resp, err)=> {
         let pending=this.state.pendingFriendRequests;
         let reqs = pending.map((a)=>(a.requestor));
@@ -102,7 +102,7 @@ class App extends Component {
       console.log("friendNames", friendNames);
       const sorted=resp.sort((a,b)=>(b[1]-a[1]));
       console.log(sorted,"sorted", this.state.myFriends,"this.myFriends");
-      const myFriends=that.state.myFriends;
+      const myFriends=this.state.myFriends;
        const uniqueFriends=[];
         for (let i=0;i<sorted.length;i++){
           let unique=true;
