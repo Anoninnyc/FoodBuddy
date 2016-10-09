@@ -12,7 +12,7 @@ const FindMovieBuddy = ({buddyfunc, buddies}) => {
     </div>
 	    <br/>
   <div className="errorMsg" style={{display: 'none'}} id='AlreadyReq2'>Youve already sent a request to this user!</div>
-  <div className="errorMsg" style={{display: 'none'}} id='enterRealFriend2'>Please enter something!</div>
+  <div className="errorMsg" style={{display: 'none'}} id='enterRealFriend2'> Please enter something!</div>
   <div className="errorMsg" style={{display: 'none'}} id='reqSent2'>Request sent!</div>
 	{empty}
    {buddies.map((buddy, idx)=>{ if (buddy[1]===null) {buddy[1]='Nothing to compare'} return (<BuddyEntry idx={"view"+idx} buddyfunc={buddyfunc} Buddy={buddy[0]} BuddyScore={buddy[1]} /> )})}
