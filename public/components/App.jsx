@@ -44,11 +44,6 @@ class App extends Component {
           friend[1]="No comparison to be made";
         }
       });
-             // for (let i=0;i<a.length;i++){
-             //    if (a[i][1]===null){
-             //      a[i][1] = "No comparison to be made";
-             //    }
-             //  }
 
       const sortedFriends= friends.sort((a, b) => { return b[1]-a[1]; });
       console.log('this is what GCF is setting as all friends', sortedFriends);
@@ -242,9 +237,9 @@ class App extends Component {
   sendRequest(a, idx) {
     console.log(typeof a);
     if (typeof a==="object") {
-      let person = document.getElementById('findFriendByName').value;
+      var person = document.getElementById('findFriendByName').value;
     } else {
-      let person = a || 'test';
+      var person = a || 'test';
     }
 
     const currFriends=this.state.myFriends;
