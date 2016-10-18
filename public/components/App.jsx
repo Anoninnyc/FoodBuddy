@@ -11,7 +11,7 @@ import SingleMovieRating from './Movies/SingleMovieRating';
 import SingleFriend from './Friends/SingleFriend';
 import FindMovieBuddy from './Friends/FindMovieBuddyView';
 import MyRatings from './Movies/MyRatings';
-import { initialState, mapRes } from '../utils';
+import { initialState, mapRes, fadeIn } from '../utils';
 
 
 class App extends Component {
@@ -242,11 +242,9 @@ class App extends Component {
   sendRequest(a, idx) {
     console.log(typeof a);
     if (typeof a==="object") {
-      var person=document.getElementById('findFriendByName').value;
-      console.log('part 1');
+      let person = document.getElementById('findFriendByName').value;
     } else {
-      console.log('part 2');
-      var person = a || 'test';
+      let person = a || 'test';
     }
 
     const currFriends=this.state.myFriends;
@@ -257,30 +255,32 @@ class App extends Component {
 
 
     // console.log('this should also be my friends',person, currFriends,friends1,friends2)
-    console.log('these should be my current friends and inMem requests and I should not be able ot send to them', friends1);
+  //  console.log('these should be my current friends and inMem requests and I should not be able ot send to them', friends1);
     if (friends1.indexOf(person)!== -1 && friends1.length!==0) {
-      $(document).scrollTop(0);
-      console.log('case caught 254');
-      $("#AlreadyReq,#AlreadyReq2").fadeIn(1000);
-      $("#AlreadyReq,#AlreadyReq2").fadeOut(1000);
+     // console.log('case caught 254');
+      fadeIn("#AlreadyReq");
+      // $("#AlreadyReq,#AlreadyReq2").fadeIn(1000);
+      // $("#AlreadyReq,#AlreadyReq2").fadeOut(1000);
 
       // console.log('this person is already in there!!')
     } else if (!person.length) {
-      $(document).scrollTop(0);
-      $("#enterRealFriend,#enterRealFriend2").fadeIn(1000);
-      $("#enterRealFriend,#enterRealFriend2").fadeOut(1000);
+      fadeIn("#enterRealFriend");
+      // $("#enterRealFriend,#enterRealFriend2").fadeIn(1000);
+      // $("#enterRealFriend,#enterRealFriend2").fadeOut(1000);
     } else {
 // console.log('person is defined?',person);
       $.post(`${Url}/sendRequest`, { name: person }, (resp, err) => {
-        console.log('should include everybody to whom a req has ever been sent, short of most recent', resp);
-        $(document).scrollTop(0);
+      //  console.log('should include everybody to whom a req has ever been sent, short of most recent', resp);
+      //  $(document).scrollTop(0);
         if (resp.indexOf(person)>-1) {
-          console.log('case caught 272');
-          $("#AlreadyReq,#AlreadyReq2").fadeIn(1000);
-          $("#AlreadyReq,#AlreadyReq2").fadeOut(1000);
+       //   console.log('case caught 272');
+       fadeIn("#AlreadyReq");
+          // $("#AlreadyReq,#AlreadyReq2").fadeIn(1000);
+          // $("#AlreadyReq,#AlreadyReq2").fadeOut(1000);
         } else {
-          $("#reqSent,#reqSent2").fadeIn(1000);
-          $("#reqSent,#reqSent2").fadeOut(1000);
+          fadeIn("#reqSent");
+          // $("#reqSent,#reqSent2").fadeIn(1000);
+          // $("#reqSent,#reqSent2").fadeOut(1000);
         }
         if (!this.isUnmounted) {
           this.setState({
@@ -297,7 +297,7 @@ class App extends Component {
   }
 
   listPendingFriendRequests() {
-    console.log('this should list friend reqs');
+   // console.log('this should list friend reqs');
     $.post(`${Url}/listRequests`, (response, error) => {
       const pFR=[];
       const rR=[];
@@ -314,8 +314,7 @@ class App extends Component {
           rR.push(response[0][i]);
         }
       }
-      //
-      console.log("Totality of inbox", pFR, rR);
+      // console.log("Totality of inbox", pFR, rR);
 
       this.setState({
         pendingFriendRequests: pFR,
@@ -360,7 +359,8 @@ class App extends Component {
   }
 
   render() {
-    const nav = (<Nav name={this.state.currentUser}
+    const nav = (<Nav
+      name={this.state.currentUser}
       find={this.findMovieBuddies}
       onClick={this.changeViews}
       logout={this.logout}
@@ -482,9 +482,9 @@ class App extends Component {
 }
 
 
-let Url = 'https://reelfriendz.herokuapp.com';
+const Url = 'https://reelfriendz.herokuapp.com';
 // var Url = 'http://127.0.0.1:3000';
-// window.Url = Url
+ window.Url = Url
 
 export default App;
 

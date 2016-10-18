@@ -5,12 +5,12 @@ const Movie = require('./movie');
 // create rating model
 const Rating = db.Model.extend({
   tableName: 'ratings',
-  user: function() {
-    return this.belongsTo(User, 'userid');
-  },
-  movie: function() {
-    return this.belongsTo(Movie, 'movieid');
-  },
+  user: () => (
+   this.belongsTo(User, 'userid')
+  ),
+  movie: () => (
+   this.belongsTo(Movie, 'movieid')
+  ),
   hasTimestamps: true
 });
 
