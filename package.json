@@ -51,18 +51,25 @@
     "back-end": "nodemon server.js",
     "start": "npm run build && nodemon server.js",
     "build": "babel public --out-dir compiled/public --presets=es2015,react --source-maps inline",
-    "watch": "babel public --out-dir compiled/public --presets=es2015,react --source-maps inline --watch"
+    "watch": "babel public --out-dir compiled/public --presets=es2015,react --source-maps inline --watch",
+    "lint" : "eslint public"
   },
   "engines": {
     "node": "6.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",
+    "babel-eslint": "^7.0.0",
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-minify-es2015": "0.0.3",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
+    "eslint": "^3.8.1",
+    "eslint-config-airbnb": "^10.0.1",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.4.1",
     "grunt": "^1.0.1",
     "grunt-shell": "^2.0.0",
     "react-tap-event-plugin": "^1.0.0",

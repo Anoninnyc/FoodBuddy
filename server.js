@@ -1,16 +1,16 @@
 
-var handler = require('./lib/request-handler.js');
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
-var sessions = require("client-sessions");
-var cors = require('cors');
-var compression = require('compression');
+const handler = require('./lib/request-handler');
+const express = require('express');
+const bodyParser = require('body-parser');
+const sessions = require("client-sessions");
+const cors = require('cors');
+const compression = require('compression');
 
+const app = express();
 
-app.get('*', function(req,res,next) {
+app.get('*', (req, res, next) => {
   if (req.headers['x-forwarded-proto'] !== 'https') {
-    res.redirect('https://' + req.hostname + req.url);
+    res.redirect(`https://'${req.hostname} ${req.url}`);
   } else {
     next();
   }
@@ -27,10 +27,10 @@ app.use(sessions({
 }));
 
 app.use(compression());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use(express.static(__dirname))
+app.use(express.static(__dirname));
 app.use(express.static(__dirname + '/public'));
 app.use('/scripts', express.static(__dirname + '/node_modules'));
 app.use('/compiled', express.static(__dirname + '/compiled'));
@@ -40,32 +40,35 @@ app.post('/signup', handler.signupUser);
 app.post('/login', handler.signinUser);
 
 
-//////////////////
-//Handling friends
-//////////////////
+// ////////////////
 
-//friend requests
+// Handling friends
+
+// ////////////////
+
+// friend requests
 app.post('/listRequests', handler.listRequests);
 app.post('/sendRequest', handler.sendRequest);
-//Friend requests
-app.post('/getThisFriendsMovies',handler.getThisFriendsMovies)
+// Friend requests
+app.post('/getThisFriendsMovies', handler.getThisFriendsMovies);
 app.post('/logout', handler.logout);
 
-app.post('/sendWatchRequest',handler.sendWatchRequest)
-app.delete('/sendWatchRequest', handler.removeWatchRequest)
+app.post('/sendWatchRequest', handler.sendWatchRequest);
+app.delete('/sendWatchRequest', handler.removeWatchRequest);
 
 app.post('/decline', handler.decline);
 app.post('/accept', handler.accept);
-app.delete('/removeRequest', handler.removeRequest)
+app.delete('/removeRequest', handler.removeRequest);
 
-app.post('/findMovieBuddies',handler.findMovieBuddies)
-app.post('/getFriends',handler.getFriends)
-app.get('/getFriendList', handler.getFriendList)
+app.post('/findMovieBuddies', handler.findMovieBuddies);
+app.post('/getFriends', handler.getFriends);
+app.get('/getFriendList', handler.getFriendList);
 
 
 //////////////////
 //Handling movies
 //////////////////
+
 app.post('/ratemovie', handler.rateMovie);
 app.get('/recentRelease', handler.getRecentRelease);
 app.get('/getUserRatings', handler.getUserRatings);
@@ -75,11 +78,11 @@ app.post('/getFriendRatings', handler.handleGetFriendRatings);
 app.get('/searchRatedMovie', handler.searchRatedMovie);
 
 
-app.get('/*', function(req, res) {
+app.get('/*', (req, res) => {
     res.redirect('/');
 });
 
-var port = process.env.PORT || 3000;
-app.listen(port, function () {
+const port = process.env.PORT || 3000;
+app.listen(port, ( ) => {
   console.log('Listening on port 3000!');
 });
