@@ -12,15 +12,22 @@ const initialState = {
   requestResponses: [],
   currentUser: null,
   requestsOfCurrentUser: []
-}
+};
 
-const mapRes=pending=>(
-	pending.map(a=>(
-		[a.requestor,a.requestTyp,a.movie===null?"": a.movie,"Message:"+ a.message==='null'?"none":a.message]
-	))   
-)
+const mapRes = pending => (
+	pending.map(a => (
+		[a.requestor, a.requestTyp, a.movie===null?"": a.movie, `Message:${a.message}`==='null'?"none":a.message]
+	))
+);
+
+const fadeIn = mess => {
+  $(document).scrollTop(0);
+  $(`${mess},${mess}${2}`).fadeIn(1000);
+  $(`${mess},${mess}${2}`).fadeOut(1000);
+};
 
 module.exports= {
   initialState,
   mapRes,
-}
+  fadeIn
+};
