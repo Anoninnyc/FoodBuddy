@@ -1,7 +1,7 @@
-var db = require('../dbConnection')
-var Rating = require('./rating');
+const db = require('../dbConnection')
+const Rating = require('./rating');
 
-var Movie = db.Model.extend({
+const Movie = db.Model.extend({
   tableName: 'movies',
   rating: function() {
     return this.hasMany(Rating);

@@ -1,8 +1,8 @@
-var db = require('../dbConnection');
-var User = require('./user');
+const db = require('../dbConnection');
+const User = require('./user');
 
 //create user relationship model
-var Relation = db.Model.extend({
+const Relation = db.Model.extend({
   tableName: 'relations',
   user1: function() {
     return this.belongsTo(User,'user1id');

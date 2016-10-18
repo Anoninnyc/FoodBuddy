@@ -1,7 +1,7 @@
-var db = require('../dbConnection');
-var Relation = require('./relation');
+const db = require('../dbConnection');
+const Relation = require('./relation');
 
-var User = db.Model.extend({
+const User = db.Model.extend({
   tableName: 'users',
   relation: function() {
     return this.hasMany(Relation);

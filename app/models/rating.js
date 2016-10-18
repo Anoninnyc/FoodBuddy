@@ -1,9 +1,9 @@
-var db = require('../dbConnection');
-var User = require('./user');
-var Movie = require('./movie');
+const db = require('../dbConnection');
+const User = require('./user');
+const Movie = require('./movie');
 
-//create rating model
-var Rating = db.Model.extend({
+// create rating model
+const Rating = db.Model.extend({
   tableName: 'ratings',
   user: function() {
     return this.belongsTo(User, 'userid');

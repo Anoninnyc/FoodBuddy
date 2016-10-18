@@ -1,7 +1,7 @@
-var db = require('../dbConnection');
+const db = require('../dbConnection');
 
-//create friendRequest model
-var allRequest = db.Model.extend({
+// create friendRequest model
+const allRequest = db.Model.extend({
   tableName: 'allRequests',
   hasTimestamps: true
 });

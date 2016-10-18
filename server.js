@@ -1,10 +1,10 @@
-
 const handler = require('./lib/request-handler');
 const express = require('express');
 const bodyParser = require('body-parser');
 const sessions = require("client-sessions");
 const cors = require('cors');
 const compression = require('compression');
+require('dotenv').config();
 
 const app = express();
 
@@ -19,7 +19,7 @@ app.get('*', (req, res, next) => {
 app.use(cors());
 app.use(sessions({
   cookieName: 'mySession', // cookie name dictates the key name added to the request object
-  secret: 'blargadeeblargblarg', // should be a large unguessable string
+  secret: process.env.SESSIONS_SECRET, // should be a large unguessable string
   resave: true,
   duration: 24 * 60 * 60 * 1000, // how long the session will stay valid in ms
   activeDuration: 1000 * 60 * 5, // if expiresIn < activeDuration, the session will be extended by activeDuration milliseconds
