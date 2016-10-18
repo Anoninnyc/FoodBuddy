@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const sessions = require("client-sessions");
 const cors = require('cors');
 const compression = require('compression');
-require('dotenv').config();
+// require('dotenv').config();
 
 const app = express();
 

@@ -9,7 +9,7 @@ module.exports = grunt => {
 
   grunt.loadNpmTasks('grunt-shell');
 
-  // sgrunt shell:addAndDeploy:Message_Here
+  // grunt shell:addAndDeploy:Message_Here
 
   grunt.registerTask('testGrunt', () => {
     console.log('testing grunt!');
