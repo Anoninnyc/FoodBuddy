@@ -1,5 +1,4 @@
 const webpack = require('webpack');
-
 const path = require('path');
 
 const SRC_DIR = path.join(__dirname, 'public');
@@ -23,6 +22,9 @@ const config = {
         test: /\.jsx?/,
         include: SRC_DIR,
         loader: 'babel',
+        query: {
+          presets: ['es2015', 'react']
+        }
       }
     ]
   }
