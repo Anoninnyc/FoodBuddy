@@ -25,8 +25,8 @@ console.log("this is the movie", movie);
   if (!movie){
     return null;
   } else if (movie.length<14){
-    return `for ${movie}`;
+    return `(${movie})`;
   } else {
-    return `for ${movie.slice(0,13)}...`;
+    return `(${movie.slice(0,13)}...)`;
   }
 }
