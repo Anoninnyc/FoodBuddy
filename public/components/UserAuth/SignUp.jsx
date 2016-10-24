@@ -15,6 +15,11 @@ class SignUp extends Component {
     };
   }
 
+  handleEnter(e) {
+    if (e.which===13) {
+      this.enterNewUser();
+    }
+  }
   handleChange(event) {
     const tar = event.target.value;
     switch (event.target.name) {
@@ -101,7 +106,7 @@ class SignUp extends Component {
           </div>
 
           <div className="input-field col s6">
-            <input placeholder="password" id="password" name='SignUpPassword' type="password" className="validate" onChange={this.handleChange.bind(this)} />
+            <input onKeyPress={this.handleEnter.bind(this)} placeholder="password" id="password" name='SignUpPassword' type="password" className="validate" onChange={this.handleChange.bind(this)} />
             <label for="password" className="active">Password</label>
           </div>
           <div className="errorMsg">{this.state.errorMsg}</div>

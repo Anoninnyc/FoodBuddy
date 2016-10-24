@@ -102,7 +102,7 @@ class App extends Component {
         }
 
         if (unique) {
-          console.log(sorted[i][0]);
+          // console.log(sorted[i][0]);
           uniqueFriends.push(sorted[i]);
         }
       }

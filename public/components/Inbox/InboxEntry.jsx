@@ -20,8 +20,9 @@ const InboxEntry = ({inboxName, accept, requestMovie, decline, requestType, mess
 
 export default InboxEntry;
 
-function movieParse(movie){
-  if (movie===null){
+function movieParse(movie) {
+console.log("this is the movie", movie);
+  if (!movie){
     return null;
   } else if (movie.length<14){
     return `for ${movie}`;
