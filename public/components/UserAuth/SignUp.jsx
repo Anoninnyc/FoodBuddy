@@ -17,27 +17,27 @@ class SignUp extends Component {
 
   handleChange(event) {
     const tar = event.target.value;
-    switch (event.target.name){
+    switch (event.target.name) {
       case 'SignUpName':
-      this.setState({
-        username: tar
-      });
-      break;
-       case 'SignUpPassword':
-      this.setState({
-        password: tar
-      });
-      break;
-       case 'SignUpFirstname':
-      this.setState({
-        firstName: tar
-      });
-      break;
-       case 'SignUpLastname':
-      this.setState({
-        lastName: tar
-      });
-      break;
+        this.setState({
+          username: tar
+        });
+        break;
+      case 'SignUpPassword':
+        this.setState({
+          password: tar
+        });
+        break;
+      case 'SignUpFirstname':
+        this.setState({
+          firstName: tar
+        });
+        break;
+      case 'SignUpLastname':
+        this.setState({
+          lastName: tar
+        });
+        break;
     }
   }
 
@@ -52,7 +52,7 @@ class SignUp extends Component {
         errorMsg: 'please enter a password'
       });
     } else {
-      let userObj = { 
+      const userObj = {
         name: this.state.username,
         password: this.state.password,
         firstName: this.state.firstName,
@@ -72,17 +72,16 @@ class SignUp extends Component {
         this.props.setCurrentUser(this.state.username);
         this.props.getCurrentFriends();
       })
-      .catch(err=> {
+      .catch(err => {
          console.log(err);
         this.setState({
           errorMsg: 'Username already taken'
         });
-      })
+      });
     }
   }
 //
   render() {
-    
     return (
     <div className='landing row'>
       <div className='icon-block col s7'>
@@ -98,21 +97,19 @@ class SignUp extends Component {
         <div className="or">OR</div>
         <div className='loginForm'>
           <div className="input-field col s6">
-            <input placeholder="username" id="user_name" name='SignUpName' type="text" className="validate" onChange={this.handleChange.bind(this)}/>
+            <input placeholder="username" id="user_name" name='SignUpName' type="text" className="validate" onChange={this.handleChange.bind(this)} />
             <label for="user_name" className="active">Username</label>
           </div>
 
           <div className="input-field col s6">
-            <input placeholder="password" id="password" name='SignUpPassword' type="password" className="validate" onChange={this.handleChange.bind(this)}/>
+            <input placeholder="password" id="password" name='SignUpPassword' type="password" className="validate" onChange={this.handleChange.bind(this)} />
             <label for="password" className="active">Password</label>
           </div>
-
-
           <div className="errorMsg">{this.state.errorMsg}</div>
           <a className="waves-effect waves-light btn" onClick={this.enterNewUser.bind(this)}>Sign Up!</a>
         </div>
       </div>
-    </div>)
+    </div>);
   }
 
 }

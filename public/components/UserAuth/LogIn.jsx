@@ -10,9 +10,12 @@ class LogIn extends Component {
       username: '',
       password: '',
       errorMsg: '',
-      loggedIn:false,
+      loggedIn: false,
     };
-    
+  }
+
+  componentWillUnmount() {
+    this.isUnmounted = true;
   }
 
   handleChange(event) {
@@ -28,13 +31,6 @@ class LogIn extends Component {
     }
   }
 
-  componentWillUnmount() {
-    this.isUnmounted = true;
-  }
-
-
-
-
   handleLogIn() {
     if (!this.state.username.length && !this.state.password.length) {
       this.setState({
@@ -49,7 +45,7 @@ class LogIn extends Component {
         errorMsg: 'please enter a password'
       });
     } else {
-      let userObj = {
+      const userObj = {
         name: this.state.username,
         password: this.state.password
       };
@@ -59,13 +55,12 @@ class LogIn extends Component {
       .then(response => {
         if (response[0] === 'it worked') {
           // console.log('hi');
-          
-          if (!this.isUnmounted){
-          this.setState({
-            errorMsg: ''
-          });
-        }
-        
+
+          if (!this.isUnmounted) {
+            this.setState({
+              errorMsg: ''
+            });
+          }
 
           this.props.changeViews('Home');
           this.props.setCurrentUser(response[1]);
@@ -73,14 +68,14 @@ class LogIn extends Component {
         }
          // console.log('this.state.view after state is set again',this.state.view);
       })
-      .catch(err=> {
+      .catch(err => {
         // console.log(err);
-       if (!this.isUnmounted){
-        this.setState({
-          errorMsg: 'Invalid login info'
-        });
-      }
-      })
+        if (!this.isUnmounted) {
+          this.setState({
+            errorMsg: 'Invalid login info'
+          });
+        }
+      });
     }
   }
 
@@ -94,7 +89,7 @@ class LogIn extends Component {
             Find your next buddy by movie taste!
           </h5>
     <h1 className="signature">Made with <p className="post">by PiquantToothbrush</p> </h1>
-      <img className="heart" src="http://bit.ly/2doVuIQ"/>
+      <img className="heart" src=".././signature.png"/>
         </div>
         <div className='login icon-block'>
           <a className="waves-effect waves-light btn" onClick={() => this.props.changeViews('SignUp')}>Go to Sign Up</a>

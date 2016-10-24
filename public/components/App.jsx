@@ -6,10 +6,10 @@ import SignUp from './UserAuth/SignUp';
 import MovieRating from './Movies/MovieRating';
 import Inbox from './Inbox/Inbox';
 import Friends from './Friends/Friends';
-import Home from './Home/Home';
+import Home from './Home/home';
 import SingleMovieRating from './Movies/SingleMovieRating';
 import SingleFriend from './Friends/SingleFriend';
-import FindMovieBuddy from './Friends/FindMovieBuddyView';
+import FindMovieBuddy from './Friends/findMovieBuddyView';
 import MyRatings from './Movies/MyRatings';
 import { initialState, mapRes, fadeIn } from '../utils';
 
@@ -33,7 +33,7 @@ class App extends Component {
     this.findMovieBuddies=this.findMovieBuddies.bind(this);
     this.listPendingFriendRequests=this.listPendingFriendRequests.bind(this);
     this.focusOnFriend=this.focusOnFriend.bind(this);
-    this.removeRequest=this.removeRequest.bind(this);//
+    this.removeRequest=this.removeRequest.bind(this);
   }
 
   getCurrentFriends() {
@@ -45,7 +45,7 @@ class App extends Component {
         }
       });
 
-      const sortedFriends= friends.sort((a, b) => { return b[1]-a[1]; });
+      const sortedFriends= friends.sort((a, b) => (b[1]-a[1]));
       console.log('this is what GCF is setting as all friends', sortedFriends);
       this.setState({
         myFriends: sortedFriends
@@ -269,7 +269,7 @@ class App extends Component {
       //  $(document).scrollTop(0);
         if (resp.indexOf(person)>-1) {
        //   console.log('case caught 272');
-       fadeIn("#AlreadyReq");
+          fadeIn("#AlreadyReq");
           // $("#AlreadyReq,#AlreadyReq2").fadeIn(1000);
           // $("#AlreadyReq,#AlreadyReq2").fadeOut(1000);
         } else {
@@ -364,14 +364,16 @@ class App extends Component {
 
     if (this.state.view==='Login') {
       return (
-        <LogIn changeViews={this.changeViews}
+        <LogIn
+          changeViews={this.changeViews}
           setCurrentUser={this.setCurrentUser}
           getCurrentFriends={this.getFriends}
         />
       );
     } else if (this.state.view==="SignUp") {
       return (
-        <SignUp changeViews={this.changeViews}
+        <SignUp
+          changeViews={this.changeViews}
           setCurrentUser={this.setCurrentUser}
           getCurrentFriends={this.getFriends}
         />
@@ -401,7 +403,7 @@ class App extends Component {
             listRequests={this.listPendingFriendRequests}
             pplWhoWantToBeFriends={mapRes(this.state.pendingFriendRequests)}
             remove={this.removeRequest}
-           />
+          />
         </div>
       );
     } else if (this.state.view === "Friends") {
@@ -479,7 +481,7 @@ class App extends Component {
 
 const Url = 'https://reelfriendz.herokuapp.com';
 // var Url = 'http://127.0.0.1:3000';
- window.Url = Url
+window.Url = Url;
 
 export default App;
 
