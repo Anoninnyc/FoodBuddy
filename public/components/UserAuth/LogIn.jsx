@@ -79,7 +79,7 @@ class LogIn extends Component {
     }
   }
 
-
+//
   render() {
     return (
       <div className='landing row'>
