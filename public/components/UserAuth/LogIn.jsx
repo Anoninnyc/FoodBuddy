@@ -31,6 +31,12 @@ class LogIn extends Component {
     }
   }
 
+  handleEnter(e) {
+    if (e.which===13) {
+      this.handleLogIn();
+    }
+  }
+
   handleLogIn() {
     if (!this.state.username.length && !this.state.password.length) {
       this.setState({
@@ -100,7 +106,7 @@ class LogIn extends Component {
             </div>
 
             <div className="input-field col s6">
-              <input placeholder="password" id="password" name='LogInPassword' type="password" className="validate" onChange={this.handleChange.bind(this)}/>
+              <input onKeyPress={this.handleEnter.bind(this)} placeholder="password" id="password" name='LogInPassword' type="password" className="validate" onChange={this.handleChange.bind(this)}/>
               <label htmlFor="password" className="active">Password</label>
             </div>
             <div className="errorMsg">{this.state.errorMsg}</div>
