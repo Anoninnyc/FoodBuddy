@@ -221,7 +221,7 @@ class App extends Component {
 
 
   changeViewsMovie(targetState, movie) {
-  
+
     this.setState({
       view: targetState,
       movie
@@ -480,7 +480,7 @@ class App extends Component {
 }
 
 
-const Url = 'https://reelpals-io.herokuapp.com/';
+const Url = 'https://reelpals-io.herokuapp.com';
 // var Url = 'http://127.0.0.1:3000';
 window.Url = Url;
 

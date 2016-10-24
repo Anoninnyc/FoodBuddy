@@ -8,7 +8,7 @@ class SignUpDrop extends React.Component {
 
   uploadFile(event) {
     var fd = ('file', this.refs.file.getDOMNode().file[0]);
-
+    
     $.ajax({
       url: 'https://reelpals-io.herokuapp.com/Upload',
       data: fd,
