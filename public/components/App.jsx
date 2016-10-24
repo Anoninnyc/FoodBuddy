@@ -221,6 +221,7 @@ class App extends Component {
 
 
   changeViewsMovie(targetState, movie) {
+  
     this.setState({
       view: targetState,
       movie

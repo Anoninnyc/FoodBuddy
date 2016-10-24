@@ -434,6 +434,10 @@ button#goBack {
   height: 170px; 
 }
 
+h5#noFriends {
+  text-align: center;
+}
+
 .individual, .friendEntryIndividual {
  cursor: pointer;
 }

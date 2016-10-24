@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import MovieList from './MovieList'
+import React, {Component} from 'react';
+import MovieList from './MovieList';
 
 class MyRatings extends Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class MyRatings extends Component {
     };
   }
 
-  //show render a list of recent releases on initialize
+  // show render a list of recent releases on initialize
   componentDidMount() {
     this.getAllRatedMovies();
   }
@@ -27,14 +27,13 @@ class MyRatings extends Component {
   getAllRatedMovies() {
     console.log(this.state.movies);
     $.get(Url + '/getUserRatings')
-    .then(userRatedMovies => {
-       console.log('response from server', userRatedMovies);
-      this.setState({
-        movies: userRatedMovies,
-        allRatedMovies: true
+      .then(userRatedMovies => {
+        console.log('response from server', userRatedMovies);
+        this.setState({
+          movies: userRatedMovies,
+          allRatedMovies: true
+        });
       });
-    })
-    
   }
 
   //////////////////////
@@ -43,35 +42,34 @@ class MyRatings extends Component {
 
   //this will call search for a movie from external API, do a database query for rating
   //and set the reponse to the movies state
-  handleSearch(event) {
-    
-    if (event.charCode == 13 || event === 'clicked') {
-      console.log(this.state.search,this.state.movies);
-      const that = this;
-      let found=false;
-      const moviesThatMatch=[]
 
-      this.state.movies.forEach((el,idx)=>{
-        console.log('here it is', el.title.toLowerCase(),this.state.search.toLowerCase());
-        if (el.title.toLowerCase().indexOf(this.state.search.toLowerCase())>-1){
+  handleSearch(event) {
+    if (event.charCode == 13 || event === 'clicked') {
+      console.log(this.state.search, this.state.movies);
+      const that = this;
+      let found = false;
+      const moviesThatMatch = []
+
+      this.state.movies.forEach((el, idx) => {
+        console.log('here it is', el.title.toLowerCase(), this.state.search.toLowerCase());
+        if (el.title.toLowerCase().indexOf(this.state.search.toLowerCase()) > -1) {
           console.log(this.state.search);
           moviesThatMatch.push(el);
-          found=true;
+          found = true;
         }
       });
-        if (!found){
-          $("#movNotInColl").fadeIn(1000);
-          $("#movNotInColl").fadeOut(1000);
-         console.log('should now show them message that there is no such movie');
-       } else {
+      if (!found) {
+        $("#movNotInColl").fadeIn(1000);
+        $("#movNotInColl").fadeOut(1000);
+        console.log('should now show them message that there is no such movie');
+      } else {
         that.setState({
-            movies: moviesThatMatch,
-            allRatedMovies: false
-          });
-       }    
+          movies: moviesThatMatch,
+          allRatedMovies: false
+        });
       }
     }
-  
+  }
 
 
   render() {
@@ -87,10 +85,10 @@ class MyRatings extends Component {
     }
 
     return (
-      <div className='MyRatings collection'> 
+      <div className='MyRatings collection'>
         <div className='header' onClick={this.getAllRatedMovies.bind(this)}>{lable}</div>
         <div className='searchMovie'>
-          <input type ='text' id='movieInput' 
+          <input type ='text' id='movieInput'
             className='movieInput'
             value={this.state.search}
             placeholder='Insert Movie Title'
@@ -100,9 +98,10 @@ class MyRatings extends Component {
           <h5 id="movNotInColl" style={{display: 'none', color:"red"}}>{this.state.search} doesn't match anything in your collection</h5>
         </div>
         {results}
-        <MovieList movies={this.state.movies}
-        change={this.props.change.bind(this)}
-        view={this.props.view}
+        <MovieList 
+          movies={this.state.movies}
+          change={this.props.change.bind(this)}
+          view={this.props.view}
         />
       </div>
     )
