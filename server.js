@@ -7,10 +7,11 @@ const compression = require('compression');
 const http = require('http');
 // require('dotenv').config();
 
-setInterval(function() {
+// keep the server alive!
+setInterval(() => {
   http.get("http://reelpals-io.herokuapp.com/");
   console.log("*************PINGED!!**********");
-}, 20000);
+}, 300000);
 
 
 const app = express();
