@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import ReviewComponent from './ReviewComponent'
-import MovieWatchRequest from './MovieWatchRequest'
-import StarRatingComponent from './StarRatingComponent'
+import ReviewComponent from './ReviewComponent';
+import MovieWatchRequest from './MovieWatchRequest';
+import StarRatingComponent from './StarRatingComponent';
 
 
 class MovieListEntry extends Component {
