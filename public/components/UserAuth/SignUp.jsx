@@ -92,7 +92,7 @@ class SignUp extends Component {
       <div className='icon-block col s7'>
         <h2 className="header logo">Welcome to ReelPals</h2>
         <h5 className="header col s12 light description">
-          Find your next buddy by movie taste!
+          Find your next buddy by your movie taste!
         </h5>
       <img className="heart" src=".././signature.png" />
       </div>
