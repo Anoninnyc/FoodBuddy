@@ -8,7 +8,7 @@ const http = require('http');
 // require('dotenv').config();
 
 setInterval(function() {
-  http.get("https://reelpals-io.herokuapp.com/");
+  http.get("http://reelpals-io.herokuapp.com/");
   console.log("*************PINGED!!**********");
 }, 20000);
 
