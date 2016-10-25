@@ -4,7 +4,14 @@ const bodyParser = require('body-parser');
 const sessions = require("client-sessions");
 const cors = require('cors');
 const compression = require('compression');
+const http = require('http');
 // require('dotenv').config();
+
+setInterval(function() {
+  http.get("https://reelpals-io.herokuapp.com/");
+  console.log("*************PINGED!!**********");
+}, 20000);
+
 
 const app = express();
 

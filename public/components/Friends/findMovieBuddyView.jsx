@@ -12,7 +12,7 @@ const FindMovieBuddy = ({ buddyfunc, buddies }) => {
         <a id="requestAFriend" className="waves-effect waves-light btn" onClick={buddyfunc}>Send a friend request</a>
       </div>
         <br />
-      <div className="errorMsg" style={{ display: 'none' }} id = 'AlreadyReq2'>Youve already sent a request to this user!</div>
+      <div className="errorMsg" style={{ display: 'none' }} id = 'AlreadyReq2'>You've already sent a request to this user!</div>
       <div className="errorMsg" style={{ display: 'none' }} id = 'enterRealFriend2'> Please enter something!</div>
       <div className="errorMsg" style={{ display: 'none' }} id = 'reqSent2'>Request sent!</div>
     	  {empty}
