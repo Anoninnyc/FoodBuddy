@@ -13,9 +13,9 @@ const Nav = ({onClick, find, logout, name}) => (
               <li><a onClick={find}>New Buddies</a></li>
             </ul>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
-              <li><a onClick={logout}>Log Out</a></li>
               <li><a onClick={() => (onClick("Inbox"))}>Notifications</a></li>
               <li><a onClick={() => (onClick("Help"))}>Help!</a></li>
+              <li><a onClick={logout}>Log Out</a></li>
             </ul>
           </div>
         </nav>
