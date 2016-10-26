@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+//
 const Help = () => (
   <div id='helpInfo'>
 	<h1 id="helpIntro"> How to use this App</h1>
