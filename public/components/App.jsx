@@ -12,6 +12,7 @@ import SingleFriend from './Friends/SingleFriend';
 import FindMovieBuddy from './Friends/findMovieBuddyView';
 import MyRatings from './Movies/MyRatings';
 import { initialState, mapRes, fadeIn } from '../utils';
+import Help from './Help';
 
 
 class App extends Component {
@@ -466,6 +467,13 @@ class App extends Component {
           <MyRatings
             change={this.changeViewsMovie}
           />
+        </div>
+      );
+    } else if (this.state.view ==="Help") {
+      return (
+        <div>
+          {nav}
+          <Help />
         </div>
       );
     }
