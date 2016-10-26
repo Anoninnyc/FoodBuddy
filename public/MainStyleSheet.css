@@ -1,3 +1,20 @@
+
+/*
+  ========================================
+  Helpbar
+  ========================================
+*/
+
+div#helpInfo {
+  text-align: center;
+}
+
+#helpInfo>div {
+  font-weight: bold;
+  color: blue;
+  opacity: 0.75;
+}
+
 /*
   ========================================
   Clearfix
