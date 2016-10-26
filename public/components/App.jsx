@@ -46,7 +46,7 @@ class App extends Component {
       });
 
       const sortedFriends= friends.sort((a, b) => (b[1]-a[1]));
-      console.log('this is what GCF is setting as all friends', sortedFriends);
+     // console.log('this is what GCF is setting as all friends', sortedFriends);
       this.setState({
         myFriends: sortedFriends
       });
@@ -85,12 +85,12 @@ class App extends Component {
 
 
   findMovieBuddies() {
-    console.log('this.state.MyFriends', this.state.myFriends);
+   // console.log('this.state.MyFriends', this.state.myFriends);
     $.post(`${Url}/findMovieBuddies`, { dummy: 'info' }, (resp, err) => {
       const friendNames=this.state.myFriends.map((info) => (info[0]));
-      console.log("friendNames", friendNames);
+      // console.log("friendNames", friendNames);
       const sorted=resp.sort((a, b) => (b[1]-a[1]));
-      console.log(sorted, "sorted", this.state.myFriends, "this.myFriends");
+      // console.log(sorted, "sorted", this.state.myFriends, "this.myFriends");
       const myFriends=this.state.myFriends;
       const uniqueFriends=[];
       for (let i=0; i<sorted.length; i++) {
@@ -106,7 +106,7 @@ class App extends Component {
           uniqueFriends.push(sorted[i]);
         }
       }
-      console.log("unique POTENTIAL NEW friends", uniqueFriends);
+      // console.log("unique POTENTIAL NEW friends", uniqueFriends);
 
       this.setState({
         view: "FNMB",
@@ -236,7 +236,7 @@ class App extends Component {
   }
 
   sendRequest(a, idx) {
-    console.log(typeof a);
+   // console.log(typeof a);
     if (typeof a==="object") {
       var person = document.getElementById('findFriendByName').value;
     } else {
@@ -255,14 +255,9 @@ class App extends Component {
     if (friends1.indexOf(person)!== -1 && friends1.length!==0) {
      // console.log('case caught 254');
       fadeIn("#AlreadyReq");
-      // $("#AlreadyReq,#AlreadyReq2").fadeIn(1000);
-      // $("#AlreadyReq,#AlreadyReq2").fadeOut(1000);
-
       // console.log('this person is already in there!!')
     } else if (!person.length) {
       fadeIn("#enterRealFriend");
-      // $("#enterRealFriend,#enterRealFriend2").fadeIn(1000);
-      // $("#enterRealFriend,#enterRealFriend2").fadeOut(1000);
     } else {
 // console.log('person is defined?',person);
       $.post(`${Url}/sendRequest`, { name: person }, (resp, err) => {
@@ -271,12 +266,9 @@ class App extends Component {
         if (resp.indexOf(person)>-1) {
        //   console.log('case caught 272');
           fadeIn("#AlreadyReq");
-          // $("#AlreadyReq,#AlreadyReq2").fadeIn(1000);
-          // $("#AlreadyReq,#AlreadyReq2").fadeOut(1000);
+
         } else {
           fadeIn("#reqSent");
-          // $("#reqSent,#reqSent2").fadeIn(1000);
-          // $("#reqSent,#reqSent2").fadeOut(1000);
         }
         if (!this.isUnmounted) {
           this.setState({
