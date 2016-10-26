@@ -46,6 +46,7 @@ db.knex.schema.hasTable('ratings').then(exists => {
     });
   }
 });
+//
 
 db.knex.schema.hasTable('users').then(exists => {
   if (!exists) {
