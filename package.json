@@ -50,7 +50,7 @@
     "front-end": "babel . --out-dir compiled --presets=es2015,react,minify-es2015 --ignore=node_modules,compiled --source-maps inline",
     "front-end-watch": "babel . --out-dir compiled --presets=es2015,react,minify-es2015 --ignore=node_modules,compiled --source-maps inline --watch",
     "back-end": "nodemon server.js",
-    "start": "npm run build && nodemon server.js",
+    "start": "nodemon server.js",
     "build": "babel public --out-dir compiled/public --presets=es2015,react --source-maps inline",
     "watch": "babel public --out-dir compiled/public --presets=es2015,react --source-maps inline --watch",
     "lint": "eslint public"
