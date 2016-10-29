@@ -9,7 +9,7 @@ const knex = require('knex')({
     database: process.env.DB_DB,
     charset: 'utf8'
   },
-  pool: { min: 0, max: 2 }
+  pool: { min: 0, max: 6 }
 });
 
 const db = require('bookshelf')(knex);
