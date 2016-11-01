@@ -624,3 +624,16 @@ a.closeWatchRequest {
 .activeWatchRequest a {
   position: absolute;
 }
+
+
+/*
+  ========================================
+  back button
+  ========================================
+*/
+
+button.goBack.center.waves-effect.waves-light.btn {
+    bottom: 23%;
+    position: absolute;
+    left: 10%;
+}
