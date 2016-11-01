@@ -124,7 +124,7 @@ class Home extends Component {
         <MovieList 
           movies={this.state.movies}
           change={this.props.change.bind(this)}
-          whence={"home"}
+          whence={"Home"}
         />
       </div>
     );

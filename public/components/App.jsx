@@ -439,6 +439,7 @@ class App extends Component {
             change={this.changeViewsFriends}
             fof={this.focusOnFriend}
             whence={this.state.whence}
+            changeViews={this.changeViews}
           />
         </div>
       );

@@ -76,6 +76,7 @@ class SingleMovieRating extends Component {
     let that = this;
     let movie = this.state.movie;
     return (
+      <div> <div onClick={()=>{this.props.changeViews(this.props.whence)}}>Go back to {this.props.whence}</div>
       <div className='Home collection' onClick={()=> console.log(this.props.whence)}>
         <div className="movieEntry collection-item row">
           <img className='moviethumnail col s3' src={movie.poster} onClick={() => (this.props.change("SingleMovie", movie))}/>
@@ -105,6 +106,7 @@ class SingleMovieRating extends Component {
             />
             )}
         </div>
+      </div>
       </div>
     );
   }
