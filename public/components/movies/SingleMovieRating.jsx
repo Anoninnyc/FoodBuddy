@@ -76,7 +76,7 @@ class SingleMovieRating extends Component {
     let that = this;
     let movie = this.state.movie;
     return (
-      <div className='Home collection' onClick={()=> console.log(that.state)}>
+      <div className='Home collection' onClick={()=> console.log(this.props.whence)}>
         <div className="movieEntry collection-item row">
           <img className='moviethumnail col s3' src={movie.poster} onClick={() => (this.props.change("SingleMovie", movie))}/>
           <div className='right col s9'>
