@@ -24,7 +24,6 @@ class MovieListEntry extends Component {
   }
 
   render() {
-    console.log("WHENCE!!!", this.props.whence);
     const movie = this.props.movie;
 
     if (this.props.friendName) {
@@ -51,7 +50,7 @@ class MovieListEntry extends Component {
             id={movie.id}/>
           <MovieWatchRequest movie={movie} />
 
-          <div className="ratings row">
+          <div className="ratings row" onClick={()=>{console.log(this.props.whence)}}>
       			<div className='imdbRating col s4'>IMDB Rating: <b>{movie.imdbRating}/10</b></div>
             <StarRatingComponent movie={movie}/>
             <div className='avgFriendRatingBlock col s4'>Average Friend Rating: {(movie.friendAverageRating) ? <b className="friendRating">{movie.friendAverageRating}/5</b> : 'n/a' }</div>
