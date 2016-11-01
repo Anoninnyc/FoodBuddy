@@ -438,6 +438,7 @@ class App extends Component {
             currentMovie={this.state.movie}
             change={this.changeViewsFriends}
             fof={this.focusOnFriend}
+            whence={this.state.whence}
           />
         </div>
       );
