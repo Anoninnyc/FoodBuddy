@@ -121,8 +121,10 @@ class Home extends Component {
           <a className="waves-effect waves-light btn" onClick={() => this.handleSearch.bind(this)('clicked')}>search</a>
         </div>
         {feedbackMsg}
-        <MovieList movies={this.state.movies}
+        <MovieList 
+          movies={this.state.movies}
           change={this.props.change.bind(this)}
+          whence={"home"}
         />
       </div>
     );

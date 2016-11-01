@@ -24,7 +24,8 @@ class MovieListEntry extends Component {
   }
 
   render() {
-    let movie = this.props.movie;
+    console.log("WHENCE!!!", this.props.whence);
+    const movie = this.props.movie;
 
     if (this.props.friendName) {
       var friendSection = (
@@ -45,10 +46,10 @@ class MovieListEntry extends Component {
     			<p className='movieYear'>{movie.release_date}</p>
     			<p className='movieDescription'>{parseDesc(movie.description)}</p>
           <ReviewComponent
-            review={movie.review} 
+            review={movie.review}
             title={movie.title}
             id={movie.id}/>
-          <MovieWatchRequest movie={movie}/>
+          <MovieWatchRequest movie={movie} />
 
           <div className="ratings row">
       			<div className='imdbRating col s4'>IMDB Rating: <b>{movie.imdbRating}/10</b></div>
@@ -58,16 +59,15 @@ class MovieListEntry extends Component {
           {friendSection}
         </div>
       </div>);
-
 	}
 }
 
-export default MovieListEntry
+export default MovieListEntry;
 
 
-function parseDesc(desc){
-  if (desc.length>250){
-    return `${desc.slice(0,244)}...`;
+function parseDesc(desc) {
+  if (desc.length>250) {
+    return `${desc.slice(0, 244)}...`;
   } else {
     return desc;
   }
