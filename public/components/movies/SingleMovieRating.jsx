@@ -76,7 +76,7 @@ class SingleMovieRating extends Component {
     let that = this;
     let movie = this.state.movie;
     return (
-      <div> <button class="goBack center waves-effect waves-light btn" onClick={()=>{this.props.changeViews(this.props.whence)}}>Go back to {this.props.whence}</button>
+      <div> <button className="goBack center waves-effect waves-light btn" onClick={()=>{this.props.changeViews(this.props.whence)}}>Go back to {this.props.whence}</button>
       <div className='Home collection' onClick={()=> console.log(this.props.whence)}>
         <div className="movieEntry collection-item row">
           <img className='moviethumnail col s3' src={movie.poster} onClick={() => (this.props.change("SingleMovie", movie))}/>
