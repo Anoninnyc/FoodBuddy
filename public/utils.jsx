@@ -11,7 +11,8 @@ const initialState = {
   username: null,
   requestResponses: [],
   currentUser: null,
-  requestsOfCurrentUser: []
+  requestsOfCurrentUser: [],
+  whence:'',
 };
 
 const mapRes = pending => (
