@@ -97,7 +97,7 @@ class SingleMovieRating extends Component {
           </div>
         </div>
         <div>
-          {this.state.friendRatings.map(friendRating => 
+          {this.state.friendRatings.map(friendRating =>
             <SingleMovieRatingEntry 
             rating={friendRating}
             change={that.props.change}
