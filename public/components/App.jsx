@@ -351,6 +351,7 @@ class App extends Component {
   }
 
   render() {
+    console.log("should have current route", this.props.location);
 
     const children = React.Children.map(this.props.children, child => (
        React.cloneElement(child, {

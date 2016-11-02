@@ -88,6 +88,7 @@ class LogIn extends Component {
 
 //
   render() {
+    console.log("this runs in login render",this.props.location);
     return (
       <div className='landing row'>
         <div className='icon-block col s7'>
