@@ -71,7 +71,7 @@ class LogIn extends Component {
           this.props.changeViews('Home');
           this.props.setCurrentUser(response[1]);
           this.props.getCurrentFriends();
-          this.context.router.push('/');
+          this.context.router.push('/home');
         }
          // console.log('this.state.view after state is set again',this.state.view);
       })
@@ -117,5 +117,11 @@ class LogIn extends Component {
       </div>)
   }
 }//
+
+
+
+LogIn.contextTypes = {
+  router: React.PropTypes.object
+};
 
 export default LogIn;
