@@ -6,7 +6,7 @@ const Nav = ({onClick, find, logout, name}) => (
       <div className="navbar-fixed movieBuddyNav">
         <nav>
           <div className="nav-wrapper">
-            <a href="#" onClick={() => (onClick("Home"))} className="brand-logo center">ReelPals</a>
+           <Link to="/home"> <a href="#" onClick={() => (onClick("Home"))} className="brand-logo center">ReelPals</a></Link>
             <ul id="nav-mobile" className="left hide-on-med-and-down">
               <Link to="/home"><li onClick={() => (onClick("Home"))}>Home</li></Link>
                <Link to="/MyRatings"><li onClick={() => (onClick("MyRatings"))}>My Ratings</li></Link>
