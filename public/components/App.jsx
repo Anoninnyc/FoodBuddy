@@ -293,7 +293,6 @@ class App extends Component {
     $.post(`${Url}/listRequests`, (response, error) => {
       const pFR=[];
       const rR=[];
-      console.log('response to lpfr', response);
 
 
       for (let i=0; i<response[0].length; i++) {
