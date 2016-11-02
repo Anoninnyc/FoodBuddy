@@ -6,7 +6,7 @@ const cors = require('cors');
 const compression = require('compression');
 const http = require('http');
 // require('dotenv').config();
-const pathToStaticDir = __dirname + '/../public/index.html';
+const pathToStaticDir = __dirname + '/public/index.html';
 // keep the server alive!
 setInterval(() => {
   http.get("http://reelpals-io.herokuapp.com/");
@@ -86,10 +86,7 @@ app.post('/getFriendRatings', handler.handleGetFriendRatings);
 app.get('/searchRatedMovie', handler.searchRatedMovie);
 
 
-app.get('*', (req, res) => {
-  console.log(pathToStaticDir);
-  res.sendFile(pathToStaticDir);
-});
+app.get('*', handler.wildcard);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
