@@ -87,7 +87,8 @@ app.get('/searchRatedMovie', handler.searchRatedMovie);
 
 
 app.get('*', (req, res) => {
-  res.status(200).sendFile(pathToStaticDir);
+  console.log(pathToStaticDir);
+  res.sendFile(pathToStaticDir);
 });
 
 const port = process.env.PORT || 3000;
