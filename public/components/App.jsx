@@ -351,139 +351,56 @@ class App extends Component {
   }
 
   render() {
-    const nav = (
+
+    const children = React.Children.map(this.props.children, child => (
+       React.cloneElement(child, {
+        changeViews: this.changeViews,
+        setCurrentUser: this.setCurrentUser,
+        getCurrentFriends: this.getFriends,
+        handleSearchMovie: this.getMovie,
+        movie:this.state.movie,
+        requests:this.state.pendingFriendRequests,
+        responsesAnswered:this.state.requestResponses,
+        logout:this.logout,
+        accept:this.acceptFriend,
+        decline:this.declineFriend,
+        listRequests:this.listPendingFriendRequests,
+        pplWhoWantToBeFriends:mapRes(this.state.pendingFriendRequests),
+        remove:this.removeRequest,
+        sendWatchRequest:this.sendWatchRequest,
+        fof:this.focusOnFriend,
+        getFriends:this.getCurrentFriends,
+        myFriends:this.state.myFriends,
+        listPotentials:this.listPotentials,
+        sendRequest:this.sendRequest,
+        change:this.changeViewsMovie,
+        compatibility:this.state.myFriends,
+        currentMovie:this.state.movie,
+        // change:this.changeViewsFriends
+        whence:this.state.whence,
+        moviesOfFriend:this.state.individualFriendsMovies,
+        friendName:this.state.friendToFocusOn,
+        onClick:this.changeViews,
+        buddyfunc:this.sendRequest,
+        buddies:this.state.potentialMovieBuddies,
+       })
+     ));
+  
       <Nav
         name={this.state.currentUser}
         find={this.findMovieBuddies}
         onClick={this.changeViews}
         logout={this.logout}
-      />);
+      />;
 
 
-    if (this.state.view==='Login') {
-      return (
-        <LogIn
-          changeViews={this.changeViews}
-          setCurrentUser={this.setCurrentUser}
-          getCurrentFriends={this.getFriends}
-        />
-      );
-    } else if (this.state.view==="SignUp") {
-      return (
-        <SignUp
-          changeViews={this.changeViews}
-          setCurrentUser={this.setCurrentUser}
-          getCurrentFriends={this.getFriends}
-        />
-      );
-    }
-    // this view is added for moviesearch rendering
-    else if (this.state.view === "MovieSearchView") {
-      return (
-        <div>
-          {nav}
-          <MovieRating
-            handleSearchMovie={this.getMovie}
-            movie={this.state.movie}
-          />
-        </div>
-      );
-    } else if (this.state.view === "Inbox") {
-      return (
-        <div>
-          {nav}
-          <Inbox
-            requests={this.state.pendingFriendRequests}
-            responsesAnswered={this.state.requestResponses}
-            logout={this.logout}
-            accept={this.acceptFriend}
-            decline={this.declineFriend}
-            listRequests={this.listPendingFriendRequests}
-            pplWhoWantToBeFriends={mapRes(this.state.pendingFriendRequests)}
-            remove={this.removeRequest}
-          />
-        </div>
-      );
-    } else if (this.state.view === "Friends") {
-      return (
-        <div>
-          {nav}
-          <Friends
-            sendWatchRequest={this.sendWatchRequest}
-            fof={this.focusOnFriend}
-            getFriends={this.getCurrentFriends}
-            myFriends={this.state.myFriends}
-            listPotentials={this.listPotentials}
-            logout={this.logout}
-            sendRequest={this.sendRequest}
-          />
-        </div>
-      );
-    }
-    else if (this.state.view === "Home") {
-      return (
-        <div>
-          {nav}
-          <Home
-            change={this.changeViewsMovie}
-          />
-        </div>
-      );
-    } else if (this.state.view === "SingleMovie") {
-      return (
-        <div>
-          {nav}
-          <SingleMovieRating
-            compatibility={this.state.myFriends}
-            currentMovie={this.state.movie}
-            change={this.changeViewsFriends}
-            fof={this.focusOnFriend}
-            whence={this.state.whence}
-            changeViews={this.changeViews}
-          />
-        </div>
-      );
-    } else if (this.state.view==='singleFriend') {
-      return (
-        <div>
-          {nav}
-          <SingleFriend
-            moviesOfFriend={this.state.individualFriendsMovies}
-            friendName={this.state.friendToFocusOn}
-            onClick={this.changeViews}
-            change={this.changeViewsMovie}
-          />
-        </div>
-      );
-    } else if (this.state.view === "FNMB") {
-      return (
-        <div>
-          {nav}
-          <FindMovieBuddy
-            buddyfunc={this.sendRequest}
-            buddies={this.state.potentialMovieBuddies}
-          />
-        </div>
-      );
-    } else if (this.state.view === "MyRatings") {
-      return (
-        <div>
-          {nav}
-          <MyRatings
-            change={this.changeViewsMovie}
-          />
-        </div>
-      );
-    } else if (this.state.view ==="Help") {
-      return (
-        <div>
-          {nav}
-          <Help />
-        </div>
-      );
-    }
+       {
+          this.props.children ?
+              {children}:null;
+        }
   }
 }
+
 
 
 const Url = 'https://reelpals-io.herokuapp.com';
@@ -491,4 +408,3 @@ const Url = 'https://reelpals-io.herokuapp.com';
 window.Url = Url;
 
 export default App;
-
