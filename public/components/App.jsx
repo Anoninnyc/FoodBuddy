@@ -397,9 +397,12 @@ class App extends Component {
 
        {
           this.props.children ?
-              {children}:null
+          <section >
+            {children}
+          </section>:
+          null
         }
-        
+
   </div>
     )
  }
