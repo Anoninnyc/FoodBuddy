@@ -26,4 +26,5 @@ const Nav = ({onClick, find, logout, name}) => (
     </div>
 );
 
+
 export default Nav;
