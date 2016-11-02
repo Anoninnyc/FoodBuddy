@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 
 
 class LogIn extends Component {
@@ -99,7 +100,7 @@ class LogIn extends Component {
          <img className="heart" src="./../signature.png" />
         </div>
         <div className='login icon-block'>
-          <a className="waves-effect waves-light btn" onClick={() => this.props.changeViews('SignUp')}>Go to Sign Up</a>
+         <Link to ="/signup"> <a className="waves-effect waves-light btn" onClick={() => this.props.changeViews('SignUp')}>Go to Sign Up</a></Link>
           <div className="or">OR</div>
           <div className='loginForm'>
             <div className="input-field col s6">
