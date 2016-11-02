@@ -71,6 +71,7 @@ class LogIn extends Component {
           this.props.changeViews('Home');
           this.props.setCurrentUser(response[1]);
           this.props.getCurrentFriends();
+          this.context.router.push('/');
         }
          // console.log('this.state.view after state is set again',this.state.view);
       })

@@ -392,7 +392,7 @@ class App extends Component {
         find={this.findMovieBuddies}
         onClick={this.changeViews}
         logout={this.logout}
-      />;
+      />
 
 
        {

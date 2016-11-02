@@ -18,8 +18,8 @@ import Help from './components/Help';
 
 export default (
   <Route path="/" component={App}>
-    <IndexRoute component={Home} />
-    <Route path="login" component={LogIn} />
+    <IndexRoute component={LogIn} />
+    <Route path="home" component={Home} />
     <Route path="signup" component={SignUp} />
     <Route path="FindMovieBuddy" component={FindMovieBuddy} />
     <Route path="inbox" component={Inbox} />
