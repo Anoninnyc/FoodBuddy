@@ -385,7 +385,8 @@ class App extends Component {
         buddies:this.state.potentialMovieBuddies,
        })
      ));
-  
+  return (
+  <div>
       <Nav
         name={this.state.currentUser}
         find={this.findMovieBuddies}
@@ -396,9 +397,12 @@ class App extends Component {
 
        {
           this.props.children ?
-              {children}:null;
+              {children}:null
         }
-  }
+        
+  </div>
+    )
+ }
 }
 
 
