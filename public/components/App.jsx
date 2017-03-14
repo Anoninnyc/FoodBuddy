@@ -223,7 +223,7 @@ class App extends Component {
 
   changeViewsMovie(targetState, movie, myRatings, whence) {
 
-    console.log("You're singling in on a movie!", targetState, movie, myRatings, whence);
+    // console.log("You're singling in on a movie!", targetState, movie, myRatings, whence);
 
     this.setState({
       view: targetState,

@@ -50,7 +50,7 @@ class SingleMovieRating extends Component {
     var that = this;
     $.post(Url + '/getFriendRatings', {movie: inputMovie})
     .then(function(response) {
-       console.log('response from server getFriendsRating: ', response);
+       // console.log('response from server getFriendsRating: ', response);
        const uniqResponses = [];
        const friendName = {};
        for (let i=0; i<response.length; i++){
@@ -60,7 +60,7 @@ class SingleMovieRating extends Component {
          }
        }
 
-      console.log('should be uniq', uniqResponses);
+     // console.log('should be uniq', uniqResponses);
 
       that.setState({
         friendRatings: uniqResponses
