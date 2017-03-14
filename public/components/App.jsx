@@ -38,17 +38,7 @@ class App extends Component {
   }
 
   getCurrentFriends() {
-    // console.log('testinggg');
     $.post(`${Url}/getFriends`, { test: 'info' }, (friends, err) => {
-
-      // friends.forEach(friend => {
-      //   if (friend[1]===null) {
-      //     friend[1]="No comparison to be made";
-      //   }
-      // });
-
-    //  const sortedFriends= friends.sort((a, b) => (b[1]-a[1]));
-     // console.log('this is what GCF is setting as all friends', sortedFriends);
       this.setState({
         myFriends: friends
       });
@@ -65,15 +55,11 @@ class App extends Component {
 
     $.post(`${Url}/accept`, { personToAccept, movie }, (resp, err) => {
       const pending=this.state.pendingFriendRequests;
-
       const reqs = pending.map((a) => (a.requestor));
-      // console.log('before', pending, reqs, personToAccept);
       pending.splice(reqs.indexOf(personToAccept), 1);
       this.setState({ pendingFriendRequests: pending });
       console.log('after', this.state.pendingFriendRequests);
-      // that.listPendingFriendRequests();
     });
-    // console.log('refreshed inbox, should delete friend request on the spot instead of moving')
   }
 
   declineFriend(personToDecline, movie) {
@@ -90,9 +76,11 @@ class App extends Component {
    // console.log('this.state.MyFriends', this.state.myFriends);
     $.post(`${Url}/findMovieBuddies`, { dummy: 'info' }, (resp, err) => {
       const friendNames=this.state.myFriends.map((info) => (info[0]));
-      // console.log("friendNames", friendNames);
-      const sorted=resp.sort((a, b) => (b[1]-a[1]));
-      // console.log(sorted, "sorted", this.state.myFriends, "this.myFriends");
+
+      console.log("resp", resp);
+
+      const sorted = resp.sort((a, b) => (b[1]-a[1]));
+
       const myFriends=this.state.myFriends;
       const uniqueFriends=[];
       for (let i=0; i<sorted.length; i++) {
