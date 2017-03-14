@@ -8,4 +8,3 @@ injectTapEventPlugin();
 render(<App />,
   document.getElementById('app')
 );
-
