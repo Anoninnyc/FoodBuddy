@@ -72,6 +72,7 @@
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.4.1",
     "grunt": "^1.0.1",
+    "grunt-contrib-uglify": "^2.2.0",
     "grunt-shell": "^2.0.0",
     "react-tap-event-plugin": "^1.0.0",
     "webpack": "^1.13.2"
