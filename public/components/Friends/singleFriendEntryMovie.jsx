@@ -1,6 +1,5 @@
 var FriendMovieEntry = ({name, rating, review}) => {
 
-
   return (
   <div className="FriendMovieEntry">
    <h2>Title:{name}</h2><br/>

@@ -486,7 +486,7 @@ class App extends Component {
 
 
 const Url = 'https://reelpals-io.herokuapp.com';
-// var Url = 'http://127.0.0.1:3000';
+//var Url = 'http://127.0.0.1:3000';
 window.Url = Url;
 
 export default App;
