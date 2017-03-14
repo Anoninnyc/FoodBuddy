@@ -75,28 +75,24 @@ class App extends Component {
   findMovieBuddies() {
    // console.log('this.state.MyFriends', this.state.myFriends);
     $.post(`${Url}/findMovieBuddies`, { dummy: 'info' }, (resp, err) => {
-      const friendNames=this.state.myFriends.map((info) => (info[0]));
+      // const friendNames=this.state.myFriends.map((info) => (info[0]));
 
       console.log("resp", resp);
 
-      const sorted = resp.sort((a, b) => (b[1]-a[1]));
-
       const myFriends=this.state.myFriends;
       const uniqueFriends=[];
-      for (let i=0; i<sorted.length; i++) {
+      for (let i=0; i<resp.length; i++) {
         let unique=true;
         for (let x=0; x<myFriends.length; x++) {
-          if (sorted[i][0]===myFriends[x][0]) {
+          if (resp[i][0]===myFriends[x][0]) {
             unique=false;
           }
         }
 
         if (unique) {
-          // console.log(sorted[i][0]);
-          uniqueFriends.push(sorted[i]);
+          uniqueFriends.push(resp[i]);
         }
       }
-      // console.log("unique POTENTIAL NEW friends", uniqueFriends);
 
       this.setState({
         view: "FNMB",
