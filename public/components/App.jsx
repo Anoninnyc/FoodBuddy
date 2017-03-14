@@ -40,16 +40,17 @@ class App extends Component {
   getCurrentFriends() {
     // console.log('testinggg');
     $.post(`${Url}/getFriends`, { test: 'info' }, (friends, err) => {
-      friends.forEach(friend => {
-        if (friend[1]===null) {
-          friend[1]="No comparison to be made";
-        }
-      });
 
-      const sortedFriends= friends.sort((a, b) => (b[1]-a[1]));
+      // friends.forEach(friend => {
+      //   if (friend[1]===null) {
+      //     friend[1]="No comparison to be made";
+      //   }
+      // });
+
+    //  const sortedFriends= friends.sort((a, b) => (b[1]-a[1]));
      // console.log('this is what GCF is setting as all friends', sortedFriends);
       this.setState({
-        myFriends: sortedFriends
+        myFriends: friends
       });
     });
   }
