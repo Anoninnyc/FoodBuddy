@@ -10,7 +10,7 @@ console.log(friendName,'friendName');
 			<div>
 			<a id="backToAllFriends" className="center waves-effect waves-light btn" onClick={() => (onClick("Friends"))}>Back to all friends</a>
 			
-			<h5 id="noFriendMovies" class="header lable">Sorry, {friendName} hasn't rated any movies.</h5>
+			<h5 id="noFriendMovies" className="header lable">Sorry, {friendName} hasn't rated any movies.</h5>
 			</div>
 			)
 

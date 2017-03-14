@@ -25,10 +25,10 @@ class MyRatings extends Component {
 
 
   getAllRatedMovies() {
-    console.log(this.state.movies);
+   // console.log(this.state.movies);
     $.get(Url + '/getUserRatings')
       .then(userRatedMovies => {
-        console.log('response from server', userRatedMovies);
+       // console.log('response from server', userRatedMovies);
         this.setState({
           movies: userRatedMovies,
           allRatedMovies: true
