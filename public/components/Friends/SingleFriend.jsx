@@ -1,30 +1,38 @@
 import React, { Component } from 'react';
-import MovieListEntry from '../Movies/MovieListEntry'
+import MovieListEntry from '../Movies/MovieListEntry';
 
-const SingleFriend = ({moviesOfFriend,onClick,friendName, change}) => {
+class SingleFriend extends Component {
 
-console.log(friendName,'friendName');
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: true,
+    };
+  }
+
+  render() {
+    console.log(this.props.friendName, 'friendName');
 	// console.log('props.moviesOfFriend', moviesOfFriend)
-	if (!moviesOfFriend.length){
+    if (!this.props.moviesOfFriend.length) {
 		return (
 			<div>
-			<a id="backToAllFriends" className="center waves-effect waves-light btn" onClick={() => (onClick("Friends"))}>Back to all friends</a>
-			
-			<h5 id="noFriendMovies" className="header lable">Sorry, {friendName} hasn't rated any movies.</h5>
+			  <a id="backToAllFriends" className="center waves-effect waves-light btn" onClick={() => (this.props.onClick("Friends"))}>Back to all friends</a>
+			  <h5 id="noFriendMovies" className="header lable">Sorry, {this.props.friendName} hasn't rated any movies.</h5>
 			</div>
-			)
+			);
 
 	} else {
 		return (
 	  <div className="Home collection">
-			<a id="backToAllFriends" className="center waves-effect waves-light btn" onClick={() => (onClick("Friends"))}>Back to all friends</a>
-			<div className="header large"> list of {friendName}'s movies</div>
-			<div className='moviesOfFriend'>
-				{moviesOfFriend.map(movie => <MovieListEntry friendName={friendName} movie={movie} change={change}/> )}
+			<a id="backToAllFriends" className="center waves-effect waves-light btn" onClick={() => (this.props.onClick("Friends"))}>Back to all friends</a>
+			<div className="header large"> list of {this.props.friendName}'s movies</div>
+			<div className="moviesOfFriend">
+				{this.props.moviesOfFriend.map(movie => <MovieListEntry friendName={this.props.friendName} movie={movie} change={this.props.change}/> )}
 			</div>
 		</div>
-		)
+		);
 	}
+  }
 };
 
 //window.SingleFriend = SingleFriend;
