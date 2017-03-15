@@ -233,11 +233,11 @@ class App extends Component {
     });
   }
 
-  sendRequest(a) {
-    if (typeof a==="object") {
+  sendRequest(buddy) {
+    if (typeof buddy==="object") {
       var person = document.getElementById('findFriendByName').value;
     } else {
-      var person = a || 'test';
+      var person = buddy || 'test';
     }
 
     const currFriends=this.state.myFriends;
