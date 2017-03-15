@@ -11,34 +11,33 @@ class SingleFriend extends Component {
   }
 
   componentWillReceiveProps() {
-  	console.log("‎componentWillReceiveProps");
-  	this.setState({loading:false});
+    this.setState({ loading: false });
   }
 
 
   render() {
-    console.log(this.props.friendName, 'friendName');
+    // console.log(this.props.friendName, 'friendName');
 	// console.log('props.moviesOfFriend', moviesOfFriend)
 	 //{/*<h5 id="noFriendMovies" className="header lable">Loading...</h5>*/}
-	if (this.state.loading) {
-		return (
-		  <div className="progress loadingBar">
-		    <div className="indeterminate"></div>
-		  </div>
+    if (this.state.loading) {
+      return (
+        <div className="progress loadingBar">
+	      <div className="indeterminate" />
+        </div>
 		);
 
 
-	} else if (!this.props.moviesOfFriend.length) {
-		return (
+     } else if (!this.props.moviesOfFriend.length) {
+       return (
 			<div>
 			  <a id="backToAllFriends" className="center waves-effect waves-light btn" onClick={() => (this.props.onClick("Friends"))}>Back to all friends</a>
 			  <h5 id="noFriendMovies" className="header lable">Sorry, {this.props.friendName} hasn't rated any movies.</h5>
 			</div>
 			);
 
-	} else {
+     } else {
 		return (
-	  <div className="Home collection">
+	     <div className="Home collection">
 			<a id="backToAllFriends" className="center waves-effect waves-light btn" onClick={() => (this.props.onClick("Friends"))}>Back to all friends</a>
 			<div className="header large"> list of {this.props.friendName}'s movies</div>
 			<div className="moviesOfFriend">

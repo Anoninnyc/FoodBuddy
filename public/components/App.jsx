@@ -73,10 +73,8 @@ class App extends Component {
 
 
   findMovieBuddies() {
-   // console.log('this.state.MyFriends', this.state.myFriends);
+    /* Maye post all current friends?*/
     $.post(`${Url}/findMovieBuddies`, { dummy: 'info' }, (resp, err) => {
-      // const friendNames=this.state.myFriends.map((info) => (info[0]));
-
       console.log("resp", resp);
 
       const myFriends=this.state.myFriends;
@@ -88,7 +86,6 @@ class App extends Component {
             unique=false;
           }
         }
-
         if (unique) {
           uniqueFriends.push(resp[i]);
         }
@@ -241,12 +238,12 @@ class App extends Component {
     }
 
     const currFriends=this.state.myFriends;
-    const friends1=currFriends.map(friendInfo => (friendInfo[0]));
+    const friends=currFriends.map(friendInfo => (friendInfo[0]));
     this.state.requestsOfCurrentUser.forEach(req => {
-      friends1.push(req);
+      friends.push(req);
     });
 
-    if (friends1.indexOf(person)!== -1 && friends1.length!==0) {
+    if (friends.indexOf(person)!== -1 && friends.length!==0) {
       fadeIn("#AlreadyReq");
     } else if (!person.length) {
       fadeIn("#enterRealFriend");
@@ -263,7 +260,6 @@ class App extends Component {
           });
         }
       });
-
 
       if (document.getElementById('findFriendByName')!==null) {
         document.getElementById('findFriendByName').value = '';
@@ -401,8 +397,7 @@ class App extends Component {
           />
         </div>
       );
-    }
-    else if (this.state.view === "Home") {
+    } else if (this.state.view === "Home") {
       return (
         <div>
           {nav}
