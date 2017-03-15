@@ -12,7 +12,7 @@ const initialState = {
   requestResponses: [],
   currentUser: null,
   requestsOfCurrentUser: [],
-  whence:'',
+  whence: "",
 };
 
 const mapRes = pending => (

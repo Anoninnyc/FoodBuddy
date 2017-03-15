@@ -10,6 +10,14 @@ class SingleFriend extends Component {
     };
   }
 
+  componentWillReceiveProps() {
+  	console.log("‎componentWillReceiveProps");
+  }
+
+  shouldComponentUpdate() {
+  	console.log("shouldComponentUpdate");
+  }
+
   render() {
     console.log(this.props.friendName, 'friendName');
 	// console.log('props.moviesOfFriend', moviesOfFriend)

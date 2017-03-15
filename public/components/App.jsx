@@ -306,7 +306,7 @@ class App extends Component {
 
     $.get(`${Url}/getFriendUserRatings`, { friendName: friend }, response => {
       this.setState({
-        individualFriendsMovies: response
+        individualFriendsMovies: response,
       });
     });
   }
