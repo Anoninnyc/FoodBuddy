@@ -235,9 +235,9 @@ class App extends Component {
 
   sendRequest(a) {
     if (typeof a==="object") {
-       person = document.getElementById('findFriendByName').value;
+      var person = document.getElementById('findFriendByName').value;
     } else {
-       person = a || 'test';
+      var person = a || 'test';
     }
 
     const currFriends=this.state.myFriends;
