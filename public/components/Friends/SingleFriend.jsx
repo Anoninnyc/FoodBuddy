@@ -12,21 +12,23 @@ class SingleFriend extends Component {
 
   componentWillReceiveProps() {
   	console.log("‎componentWillReceiveProps");
-  }
-
-  shouldComponentUpdate() {
-  	console.log("shouldComponentUpdate");
-  }
-
-  componentDidUpdate() {
-  	console.log("componentDidUpdate");
+  	this.setState({loading:false});
   }
 
 
   render() {
     console.log(this.props.friendName, 'friendName');
 	// console.log('props.moviesOfFriend', moviesOfFriend)
-    if (!this.props.moviesOfFriend.length) {
+	 //{/*<h5 id="noFriendMovies" className="header lable">Loading...</h5>*/}
+	if (this.state.loading) {
+		return (
+		  <div className="progress loadingBar">
+		    <div className="indeterminate"></div>
+		  </div>
+		);
+
+
+	} else if (!this.props.moviesOfFriend.length) {
 		return (
 			<div>
 			  <a id="backToAllFriends" className="center waves-effect waves-light btn" onClick={() => (this.props.onClick("Friends"))}>Back to all friends</a>
