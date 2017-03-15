@@ -117,27 +117,36 @@ class App extends Component {
 
   enterNewUser(name, password) {
     // console.log(name,password);
-    $.post(`${Url}/signup`, { name, password }).then(() => {
-      // console.log('success');
-      this.setState({ username: name, view: "Home" });
-    }).catch(() => { console.log('error'); });
+    $.post(`${Url}/signup`, {
+      name,
+      password
+    }).then(() => {
+      this.setState({
+        username: name,
+        view: "Home"
+      });
+    }).catch(() => {
+      console.log('error');
+    });
   }
 
   getFriendMovieRatings() {
     const movieName = document.getElementById("movieToView").value;
-    $.post(`${Url}/getFriendRatings`, { name: movieName }).then(response => {
+    $.post(`${Url}/getFriendRatings`, {
+      name: movieName
+    }).then(response => {
       this.setState({
         view: "Home",
         friendsRatings: response
       });
-    // console.log('our response',this.state.friendsRatings)
-    }).catch(err => { console.log(err); });
+    }).catch(err => {
+      console.log(err);
+    });
   }
 
 
   logout() {
     $.post(`${Url}/logout`).then(response => {
-      // console.log(response);
       this.setState(initialState);
     });
   }
@@ -224,12 +233,11 @@ class App extends Component {
     });
   }
 
-  sendRequest(a, idx) {
-   // console.log(typeof a);
+  sendRequest(a) {
     if (typeof a==="object") {
-      var person = document.getElementById('findFriendByName').value;
+       person = document.getElementById('findFriendByName').value;
     } else {
-      var person = a || 'test';
+       person = a || 'test';
     }
 
     const currFriends=this.state.myFriends;
@@ -238,24 +246,14 @@ class App extends Component {
       friends1.push(req);
     });
 
-
-    // console.log('this should also be my friends',person, currFriends,friends1,friends2)
-  //  console.log('these should be my current friends and inMem requests and I should not be able ot send to them', friends1);
     if (friends1.indexOf(person)!== -1 && friends1.length!==0) {
-     // console.log('case caught 254');
       fadeIn("#AlreadyReq");
-      // console.log('this person is already in there!!')
     } else if (!person.length) {
       fadeIn("#enterRealFriend");
     } else {
-// console.log('person is defined?',person);
       $.post(`${Url}/sendRequest`, { name: person }, (resp, err) => {
-      //  console.log('should include everybody to whom a req has ever been sent, short of most recent', resp);
-      //  $(document).scrollTop(0);
         if (resp.indexOf(person)>-1) {
-       //   console.log('case caught 272');
           fadeIn("#AlreadyReq");
-
         } else {
           fadeIn("#reqSent");
         }

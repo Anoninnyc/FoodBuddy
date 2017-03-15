@@ -8,7 +8,8 @@ class MyRatings extends Component {
     this.state = {
       movies: [],
       allRatedMovies: true,
-      search: ''
+      search: '',
+      loading: true,
     };
   }
 
@@ -33,6 +34,7 @@ class MyRatings extends Component {
           movies: userRatedMovies,
           allRatedMovies: true
         });
+        this.setState({ loading: false });
       });
   }
 
@@ -78,8 +80,10 @@ class MyRatings extends Component {
     if (this.state.allRatedMovies === false) {
       lable = 'Back To All Rated Movies';
       results = (this.state.movies.length === 0) ? (<div className="errorMsg">Results cannot be found</div>) : (<h5 className="updateMsg">All matching results</h5>)
-    } else if (this.state.allRatedMovies && this.state.movies.length === 0) {
+    } else if (this.state.allRatedMovies && this.state.movies.length === 0 && !this.state.loading) {
       lable = 'You have not rated any movies';
+    } else if (this.state.loading) {
+      lable = 'Loading...';
     } else {
       lable = 'All Rated Movies';
     }
